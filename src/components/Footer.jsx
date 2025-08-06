@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'; // Add this import
 import './Footer.css';
 import logo from '../assets/logo.png';
 
@@ -22,9 +23,11 @@ export default function Footer() {
         <div className="footer__section">
           <h4>Quick Links</h4>
           <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/services">Services</a></li>
-            <li><a href="/contact">Contact</a></li>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/about">About Us</Link></li>
+            <li><Link to="/services">Services</Link></li>
+            <li><Link to="/pricing">Pricing</Link></li>
+            <li><Link to="/contact">Contact</Link></li>
           </ul>
         </div>
 
@@ -37,7 +40,7 @@ export default function Footer() {
           </div>
           <div className="contact-item">
             <span className="contact-icon">📞</span>
-            <a href="tel:+15551234567">+91 1234567890</a>
+            <a href="tel:+919876543210">+91 1234567890</a>
           </div>
           <div className="contact-item">
             <span className="contact-icon">📍</span>
