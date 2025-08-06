@@ -1,11 +1,11 @@
 import { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom'; // Add these imports
+import { Link, useLocation } from 'react-router-dom';
 import './Navbar.css';
-import logo from '../assets/logo.png';
+import logo from '../assets/logo.svg';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const location = useLocation(); // Hook to get current route
+  const location = useLocation();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -15,15 +15,9 @@ export default function Navbar() {
     setIsMenuOpen(false);
   };
 
-  const handleGetStarted = () => {
-    window.location.href = '/contact';
-  };
-
-  // Function to check if link is active
   const isActive = (path) => {
     return location.pathname === path;
   };
-
 
   return (
     <header className="navbar">
@@ -32,7 +26,6 @@ export default function Navbar() {
         <span>UPSCALE</span>
       </div>
 
-      {/* Desktop Navigation - Use Link instead of a tags */}
       <nav className={`links ${isMenuOpen ? 'links-mobile-open' : ''}`}>
         <Link 
           to="/" 
@@ -71,7 +64,8 @@ export default function Navbar() {
         </Link>
       </nav>
 
-      <button className="cta" onClick={handleGetStarted}><Link to='/contact'>Get Started</Link></button>
+      {/* Updated CTA - Solution 1 */}
+      <Link to="/contact" className="cta">Get Started</Link>
 
       {/* Mobile Menu Button */}
       <button className="mobile-menu-btn" onClick={toggleMenu}>
@@ -91,7 +85,8 @@ export default function Navbar() {
             <Link to="/services" onClick={closeMenu}>Services</Link>
             <Link to="/pricing" onClick={closeMenu}>Pricing</Link>
             <Link to="/contact" onClick={closeMenu}>Contact</Link>
-            <button className="mobile-cta" onClick={handleGetStarted}>Get Started</button>
+            {/* Updated Mobile CTA */}
+            <Link to="/contact" className="mobile-cta" onClick={closeMenu}>Get Started</Link>
           </nav>
         </div>
       )}
