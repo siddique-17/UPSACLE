@@ -1,0 +1,390 @@
+.about {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* ========== ABOUT HERO ========== */
+.about-hero {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  padding: 100px 6vw 80px;
+  background: linear-gradient(135deg, #fff7f1 0%, #ffffff 60%);
+}
+
+.about-hero__content {
+  flex: 1;
+  max-width: 600px;
+}
+
+.about-hero h1 {
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 24px;
+}
+
+.accent { color: #ff6600; }
+
+.about-hero p {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 40px;
+}
+
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 30px;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat strong {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ff6600;
+}
+
+.stat span {
+  color: #666;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.about-hero__image {
+  flex: 1;
+  max-width: 500px;
+}
+
+.about-hero__image img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* ========== MISSION & VISION ========== */
+.mission-vision {
+  padding: 90px 6vw;
+  background: #ffffff;
+}
+
+.mission-vision__content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.mission h2,
+.vision h2 {
+  font-size: 2rem;
+  color: #111;
+  margin-bottom: 20px;
+}
+
+.mission p,
+.vision p {
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+
+.mission-list {
+  list-style: none;
+  padding: 0;
+}
+
+.mission-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.check-icon {
+  color: #ff6600;
+  font-weight: 700;
+  background: #ffe7d3;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+
+.growth-highlight {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  background: #fff7f1;
+  padding: 25px;
+  border-radius: 12px;
+  border-left: 4px solid #ff6600;
+}
+
+.growth-icon {
+  font-size: 2.5rem;
+  background: #ffe7d3;
+  padding: 15px;
+  border-radius: 12px;
+}
+
+.growth-highlight h3 {
+  margin-bottom: 8px;
+  color: #111;
+}
+
+.growth-highlight p {
+  margin: 0;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+/* ========== LEADERSHIP TEAM ========== */
+.leadership {
+  padding: 90px 6vw;
+  background: #f8f9fa;
+  text-align: center;
+}
+
+.leadership h2 {
+  font-size: 2.2rem;
+  color: #111;
+  margin-bottom: 15px;
+}
+
+.leadership__subtitle {
+  color: #666;
+  max-width: 700px;
+  margin: 0 auto 60px;
+  line-height: 1.6;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.team-member {
+  background: #fff;
+  padding: 40px 30px;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+  transition: transform 0.3s;
+}
+
+.team-member:hover {
+  transform: translateY(-8px);
+}
+
+.member-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin: 0 auto 25px;
+  overflow: hidden;
+  border: 4px solid #ffe7d3;
+}
+
+.member-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.team-member h3 {
+  color: #111;
+  margin-bottom: 8px;
+  font-size: 1.3rem;
+}
+
+.member-title {
+  color: #ff6600;
+  font-weight: 600;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+
+.member-desc {
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ========== WHY CHOOSE UPSCALE ========== */
+.why-choose {
+  padding: 90px 6vw;
+  background: #ffffff;
+  text-align: center;
+}
+
+.why-choose h2 {
+  font-size: 2.2rem;
+  color: #111;
+  margin-bottom: 15px;
+}
+
+.why-choose__subtitle {
+  color: #666;
+  max-width: 700px;
+  margin: 0 auto 60px;
+  line-height: 1.6;
+}
+
+.reasons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.reason-card {
+  background: #fff;
+  padding: 35px 25px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+  text-align: left;
+  transition: transform 0.3s;
+  border: 1px solid #f0f0f0;
+}
+
+.reason-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.reason-icon {
+  font-size: 2.2rem;
+  background: #ffe7d3;
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.reason-card h3 {
+  color: #111;
+  margin-bottom: 12px;
+  font-size: 1.2rem;
+}
+
+.reason-card p {
+  color: #555;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ========== CTA SECTION ========== */
+.about-cta {
+  background: #ff6600;
+  padding: 70px 6vw;
+  text-align: center;
+}
+
+.about-cta__content h2 {
+  color: #fff;
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+}
+
+.about-cta__content p {
+  color: #ffe7d3;
+  font-size: 1.1rem;
+  margin-bottom: 35px;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-primary,
+.btn-outline {
+  padding: 14px 32px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.25s;
+  font-size: 1rem;
+}
+
+.btn-primary {
+  background: #fff;
+  color: #ff6600;
+  border: 2px solid #fff;
+}
+
+.btn-outline {
+  background: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+}
+
+.btn-primary:hover {
+  background: #f8f9fa;
+  transform: translateY(-2px);
+}
+
+.btn-outline:hover {
+  background: #fff;
+  color: #ff6600;
+  transform: translateY(-2px);
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 900px) {
+  .about-hero {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .mission-vision__content {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+  
+  .stats-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .stats-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .reasons-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .btn-primary,
+  .btn-outline {
+    width: 100%;
+    max-width: 300px;
+  }
+}

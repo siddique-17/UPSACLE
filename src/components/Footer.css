@@ -1,0 +1,139 @@
+.footer {
+  background: #1a2332;
+  color: #ffffff;
+  padding: 60px 6vw 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.footer__content {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 50px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 40px;
+}
+
+.footer__section h4 {
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+/* Company Info Section */
+.footer__brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.footer__brand img {
+  width: 36px;
+  filter: brightness(0) invert(1); /* Makes logo white */
+}
+
+.footer__brand span {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ff6600;
+}
+
+.footer__description {
+  color: #ffffff;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Quick Links */
+.footer__section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer__section li {
+  margin-bottom: 12px;
+}
+
+.footer__section a {
+  color: #f8f5f5;
+  text-decoration: none;
+  transition: color 0.25s;
+}
+
+.footer__section a:hover {
+  color: #ff6600;
+}
+
+/* Contact Info */
+.contact-item {
+  display: flex;
+
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.contact-icon {
+  font-size: 1.1rem;
+  color: #ff6600;
+  width: 20px;
+}
+
+.contact-item a,
+.contact-item span {
+  color: #000000;
+  text-decoration: none;
+}
+
+.contact-item a:hover {
+  color: #ff6600;
+}
+
+/* Bottom Section */
+.footer__bottom {
+  border-top: 1px solid #334155;
+  padding: 25px 0;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.footer__bottom p {
+  color: #b8c5d1;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer__content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .footer {
+    padding: 40px 6vw 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer__brand {
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .footer__description {
+    text-align: center;
+  }
+  
+  .footer__section {
+    text-align: center;
+  }
+  
+  .contact-item {
+    justify-content: center;
+  }
+}
