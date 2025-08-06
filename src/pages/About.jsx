@@ -11,7 +11,7 @@ import priyaImg from '../assets/profile.png';
 export default function About() {
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <main className="about">
         {/* ========== ABOUT HERO ========== */}
         <section className="about-hero">
@@ -225,7 +225,7 @@ export default function About() {
           </div>
         </section>
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

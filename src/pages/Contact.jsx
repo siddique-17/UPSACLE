@@ -1,11 +1,97 @@
+import { useState } from 'react';
 import './Contact.css';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
 export default function Contact() {
+  const [formData, setFormData] = useState({
+    fullName: '',
+    email: '',
+    phone: '',
+    service: '',
+    message: ''
+  });
+  
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState('');
+
+  // Handle input changes
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  // Handle form submission with Web3Forms
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus('');
+
+    try {
+      // Create FormData object
+      const formDataObj = new FormData();
+      
+      // Add your Web3Forms access key
+      formDataObj.append("access_key", "ae57a760-e773-4782-84b0-7bf55f8a7bf2"); // Replace with your actual access key
+      
+      // Add form fields
+      formDataObj.append("name", formData.fullName);
+      formDataObj.append("email", formData.email);
+      formDataObj.append("phone", formData.phone);
+      formDataObj.append("service", formData.service);
+      formDataObj.append("message", formData.message);
+      
+      // Optional: Add custom subject
+      formDataObj.append("subject", `New Contact Form Submission from ${formData.fullName}`);
+      
+      // Optional: Add redirect URL (where user goes after successful submission)
+      // formDataObj.append("redirect", "https://yourwebsite.com/thank-you");
+
+      // Convert FormData to JSON
+      const object = Object.fromEntries(formDataObj);
+      const json = JSON.stringify(object);
+
+      // Submit to Web3Forms
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        },
+        body: json
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setSubmitStatus('success');
+        console.log("Success", result);
+        
+        // Reset form
+        setFormData({
+          fullName: '',
+          email: '',
+          phone: '',
+          service: '',
+          message: ''
+        });
+      } else {
+        throw new Error(result.message || 'Failed to send message');
+      }
+    } catch (error) {
+      console.error('Error sending message:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <main className="contact-page">
         {/* ========== CONTACT HERO ========== */}
         <section className="contact-hero">
@@ -75,12 +161,28 @@ export default function Contact() {
             <div className="contact-form">
               <h2>Send us a Message</h2>
               
-              <form className="form">
+              {/* Status Messages */}
+              {submitStatus === 'success' && (
+                <div className="success-message">
+                  ✅ Thank you! Your message has been sent successfully. We'll get back to you within 24 hours.
+                </div>
+              )}
+              
+              {submitStatus === 'error' && (
+                <div className="error-message">
+                  ❌ Sorry, there was an error sending your message. Please try again or contact us directly.
+                </div>
+              )}
+              
+              <form className="form" onSubmit={handleSubmit}>
                 <div className="form-row">
                   <div className="form-group">
                     <label>Full Name *</label>
                     <input 
                       type="text" 
+                      name="fullName"
+                      value={formData.fullName}
+                      onChange={handleChange}
                       placeholder="Your full name"
                       required
                     />
@@ -90,6 +192,9 @@ export default function Contact() {
                     <label>Email Address *</label>
                     <input 
                       type="email" 
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
                       placeholder="your@email.com"
                       required
                     />
@@ -102,13 +207,20 @@ export default function Contact() {
                     <label>Phone Number</label>
                     <input 
                       type="tel" 
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
                       placeholder="+91 1234567890"
                     />
                   </div>
                   <br />
                   <div className="form-group">
                     <label>Service Interest</label>
-                    <select>
+                    <select 
+                      name="service"
+                      value={formData.service}
+                      onChange={handleChange}
+                    >
                       <option value="">Select a service</option>
                       <option value="amazon">Amazon Account Management</option>
                       <option value="flipkart">Flipkart Account Management</option>
@@ -125,13 +237,20 @@ export default function Contact() {
                   <label>Message *</label>
                   <textarea 
                     rows="5"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
                     placeholder="Tell us about your business and how we can help you grow..."
                     required
                   ></textarea>
                 </div>
 
-                <button type="submit" className="send-message-btn">
-                  Send Message 📤
+                <button 
+                  type="submit" 
+                  className="send-message-btn"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? 'Sending... ⏳' : 'Send Message 📤'}
                 </button>
               </form>
             </div>
@@ -161,7 +280,7 @@ export default function Contact() {
           </div>
         </section>
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

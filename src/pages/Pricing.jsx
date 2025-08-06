@@ -5,7 +5,7 @@ import Footer from '../components/Footer';
 export default function Pricing() {
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <main className="pricing-page">
         {/* ========== PRICING HERO ========== */}
         <section className="pricing-hero">
@@ -225,7 +225,7 @@ export default function Pricing() {
           </div>
         </section>
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

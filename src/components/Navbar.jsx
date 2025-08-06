@@ -1,9 +1,11 @@
 import { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom'; // Add these imports
 import './Navbar.css';
 import logo from '../assets/logo.png';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation(); // Hook to get current route
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -17,20 +19,56 @@ export default function Navbar() {
     window.location.href = '/contact';
   };
 
+  // Function to check if link is active
+  const isActive = (path) => {
+    return location.pathname === path;
+  };
+  
+
   return (
     <header className="navbar">
       <div className="brand">
         <img src={logo} alt="UPSCALE" />
-        {/* <span>UPSCALE</span> */}
+        <span>UPSCALE</span>
       </div>
 
-      {/* Desktop Navigation */}
+      {/* Desktop Navigation - Use Link instead of a tags */}
       <nav className={`links ${isMenuOpen ? 'links-mobile-open' : ''}`}>
-        <a href="/" onClick={closeMenu}>Home</a>
-        <a href="/about" onClick={closeMenu}>About Us</a>
-        <a href="/services" onClick={closeMenu}>Services</a>
-        <a href="/pricing" onClick={closeMenu}>Pricing</a>
-        <a href="/contact" onClick={closeMenu}>Contact</a>
+        <Link 
+          to="/" 
+          className={isActive('/') ? 'active' : ''} 
+          onClick={closeMenu}
+        >
+          Home
+        </Link>
+        <Link 
+          to="/about" 
+          className={isActive('/about') ? 'active' : ''} 
+          onClick={closeMenu}
+        >
+          About Us
+        </Link>
+        <Link 
+          to="/services" 
+          className={isActive('/services') ? 'active' : ''} 
+          onClick={closeMenu}
+        >
+          Services
+        </Link>
+        <Link 
+          to="/pricing" 
+          className={isActive('/pricing') ? 'active' : ''} 
+          onClick={closeMenu}
+        >
+          Pricing
+        </Link>
+        <Link 
+          to="/contact" 
+          className={isActive('/contact') ? 'active' : ''} 
+          onClick={closeMenu}
+        >
+          Contact
+        </Link>
       </nav>
 
       <button className="cta" onClick={handleGetStarted}>Get Started</button>
@@ -48,11 +86,11 @@ export default function Navbar() {
       {isMenuOpen && (
         <div className="mobile-overlay" onClick={closeMenu}>
           <nav className="mobile-menu">
-            <a href="/" onClick={closeMenu}>Home</a>
-            <a href="/about" onClick={closeMenu}>About Us</a>
-            <a href="/services" onClick={closeMenu}>Services</a>
-            <a href="/pricing" onClick={closeMenu}>Pricing</a>
-            <a href="/contact" onClick={closeMenu}>Contact</a>
+            <Link to="/" onClick={closeMenu}>Home</Link>
+            <Link to="/about" onClick={closeMenu}>About Us</Link>
+            <Link to="/services" onClick={closeMenu}>Services</Link>
+            <Link to="/pricing" onClick={closeMenu}>Pricing</Link>
+            <Link to="/contact" onClick={closeMenu}>Contact</Link>
             <button className="mobile-cta" onClick={handleGetStarted}>Get Started</button>
           </nav>
         </div>

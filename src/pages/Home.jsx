@@ -6,12 +6,12 @@ import heroImg from '../assets/hero.jpeg';
 export default function Home() {
   return (
     <main id="home" className="home">
-      <Navbar/>
+      {/* <Navbar/> */}
       {/* ========== HERO ========== */}
       <section className="hero">
         <div className="hero__text">
           <h1>
-            Scale&nbsp;Your&nbsp;<span className="accent">E-Commerce</span>&nbsp;Business
+            Scale&nbsp;Your&nbsp;<br /><span className="accent">E-Commerce</span>&nbsp;Business
           </h1>
           <p>
             Professional account management and optimization services for Amazon,
@@ -26,7 +26,7 @@ export default function Home() {
           </ul>
 
           <div className="btn-row">
-            <button className="btn-primary">Get Started Today</button>
+            <button  className="btn-primary">Get Started Today</button>
             <button className="btn-outline">View Services</button>
           </div>
         </div>
@@ -180,7 +180,7 @@ export default function Home() {
           ))}
         </div>
       </section>
-      <Footer/>
+      {/* <Footer/> */}
     </main>
   );
 }
