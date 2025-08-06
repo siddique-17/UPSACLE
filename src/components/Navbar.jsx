@@ -23,7 +23,7 @@ export default function Navbar() {
   const isActive = (path) => {
     return location.pathname === path;
   };
-  
+
 
   return (
     <header className="navbar">
@@ -71,7 +71,7 @@ export default function Navbar() {
         </Link>
       </nav>
 
-      <button className="cta" onClick={handleGetStarted}>Get Started</button>
+      <button className="cta" onClick={handleGetStarted}><Link to='/contact'>Get Started</Link></button>
 
       {/* Mobile Menu Button */}
       <button className="mobile-menu-btn" onClick={toggleMenu}>
