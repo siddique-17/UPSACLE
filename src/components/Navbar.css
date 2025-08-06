@@ -231,10 +231,10 @@
   }
 }
 .cta {
-  display: inline-block; /* Add this for Link elements */
+  display: inline-block;
   padding: 12px 24px;
   background: linear-gradient(135deg, #ff6600, #ff8533);
-  color: #fff;
+  color: #fff !important; /* Force color to override link defaults */
   border: none;
   border-radius: 25px;
   font-weight: 600;
@@ -247,6 +247,46 @@
   overflow: hidden;
   animation: ctaPulse 3s ease-in-out infinite;
   box-shadow: 0 4px 15px rgba(255, 102, 0, 0.3);
-  text-decoration: none; /* Add this for Link elements */
-  text-align: center; /* Add this for Link elements */
+  text-decoration: none !important; /* Force remove underline */
+  text-align: center;
+}
+
+/* Remove underline on all states */
+.cta:link,
+.cta:visited,
+.cta:hover,
+.cta:active {
+  text-decoration: none !important;
+  color: #fff !important;
+}
+
+.mobile-cta {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 14px 24px;
+  background: linear-gradient(135deg, #ff6600, #ff8533);
+  color: #fff !important; /* Force color to override link defaults */
+  border: none;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  overflow: hidden;
+  animation: mobileCTAPulse 2s ease-in-out infinite;
+  box-shadow: 0 4px 15px rgba(255, 102, 0, 0.3);
+  text-decoration: none !important; /* Force remove underline */
+  text-align: center;
+  width: 100%;
+}
+
+/* Remove underline on all states for mobile CTA */
+.mobile-cta:link,
+.mobile-cta:visited,
+.mobile-cta:hover,
+.mobile-cta:active {
+  text-decoration: none !important;
+  color: #fff !important;
 }

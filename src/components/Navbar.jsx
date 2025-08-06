@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './Navbar.css';
-import logo from '../assets/logo.svg';
+import logo from '../assets/logo.png';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -15,6 +15,7 @@ export default function Navbar() {
     setIsMenuOpen(false);
   };
 
+  // Function to check if link is active
   const isActive = (path) => {
     return location.pathname === path;
   };
@@ -26,6 +27,7 @@ export default function Navbar() {
         <span>UPSCALE</span>
       </div>
 
+      {/* Desktop Navigation */}
       <nav className={`links ${isMenuOpen ? 'links-mobile-open' : ''}`}>
         <Link 
           to="/" 
@@ -64,7 +66,7 @@ export default function Navbar() {
         </Link>
       </nav>
 
-      {/* Updated CTA - Solution 1 */}
+      {/* FIXED: Use Link instead of button with nested Link */}
       <Link to="/contact" className="cta">Get Started</Link>
 
       {/* Mobile Menu Button */}
@@ -85,7 +87,7 @@ export default function Navbar() {
             <Link to="/services" onClick={closeMenu}>Services</Link>
             <Link to="/pricing" onClick={closeMenu}>Pricing</Link>
             <Link to="/contact" onClick={closeMenu}>Contact</Link>
-            {/* Updated Mobile CTA */}
+            {/* FIXED: Use Link instead of button for mobile CTA too */}
             <Link to="/contact" className="mobile-cta" onClick={closeMenu}>Get Started</Link>
           </nav>
         </div>
