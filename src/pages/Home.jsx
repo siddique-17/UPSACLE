@@ -2,6 +2,7 @@ import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import './Home.css';
 import heroImg from '../assets/hero.jpeg';
+import { Link } from 'react-router-dom';
 
 export default function Home() {
   return (
@@ -25,9 +26,10 @@ export default function Home() {
             <li><strong>24/7</strong><span>Support</span></li>
           </ul>
 
-          <div className="btn-row">
-            <button  className="btn-primary">Get Started Today</button>
-            <button className="btn-outline">View Services</button>
+           <div className="btn-row">
+            {/* Updated: Use Link instead of button */}
+            <Link to="/contact" className="btn-primary">Get Started Today</Link>
+            <Link to="/services" className="btn-outline">View Services</Link>
           </div>
         </div>
 

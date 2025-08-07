@@ -261,7 +261,7 @@ export default function Services() {
         </section>
 
         {/* ========== CTA SECTION ========== */}
-        <section className="services-cta">
+        {/* <section className="services-cta">
           <div className="services-cta__content">
             <h2>Ready to Scale Your E-Commerce Business?</h2>
             <p>
@@ -273,7 +273,7 @@ export default function Services() {
               <button className="btn-outline">Contact Our Team</button>
             </div>
           </div>
-        </section>
+        </section> */}
       </main>
       {/* <Footer /> */}
     </>

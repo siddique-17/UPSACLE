@@ -211,7 +211,7 @@ export default function Pricing() {
         </section>
 
         {/* ========== CTA SECTION ========== */}
-        <section className="pricing-cta">
+        {/* <section className="pricing-cta">
           <div className="pricing-cta__content">
             <h2>Ready to Scale Your Business?</h2>
             <p>
@@ -223,7 +223,7 @@ export default function Pricing() {
               <button className="btn-outline">Schedule Consultation</button>
             </div>
           </div>
-        </section>
+        </section> */}
       </main>
       {/* <Footer /> */}
     </>

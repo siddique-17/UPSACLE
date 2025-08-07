@@ -12,7 +12,7 @@
   position: sticky;
   top: 0;
   z-index: 1000;
-  font-family: 'Poppins', sans-serif; /* Updated font */
+  font-family: 'Poppins', sans-serif;
 }
 
 .brand {
@@ -68,23 +68,39 @@
 }
 
 .cta {
+  display: inline-block;
   padding: 12px 24px;
-  background: #ff6600;
-  color: #fff;
+  background: linear-gradient(135deg, #ff6600, #ff8533);
+  color: #fff !important;
   border: none;
-  border-radius: 8px;
+  border-radius: 25px;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   font-size: 1rem;
   font-family: 'Poppins', sans-serif;
   z-index: 1001;
+  position: relative;
+  overflow: hidden;
+  animation: ctaPulse 3s ease-in-out infinite;
+  box-shadow: 0 4px 15px rgba(255, 102, 0, 0.3);
+  text-decoration: none !important;
+  text-align: center;
 }
 
 .cta:hover {
   background: #e55a00;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(255, 102, 0, 0.3);
+}
+
+/* Remove underline on all states */
+.cta:link,
+.cta:visited,
+.cta:hover,
+.cta:active {
+  text-decoration: none !important;
+  color: #fff !important;
 }
 
 /* Mobile Menu Button */
@@ -165,17 +181,25 @@
 }
 
 .mobile-cta {
+  display: inline-block;
   margin-top: 20px;
   padding: 14px 24px;
-  background: #ff6600;
-  color: #fff;
+  background: linear-gradient(135deg, #ff6600, #ff8533);
+  color: #fff !important;
   border: none;
-  border-radius: 8px;
+  border-radius: 25px;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   font-size: 1rem;
   font-family: 'Poppins', sans-serif;
+  position: relative;
+  overflow: hidden;
+  animation: mobileCTAPulse 2s ease-in-out infinite;
+  box-shadow: 0 4px 15px rgba(255, 102, 0, 0.3);
+  text-decoration: none !important;
+  text-align: center;
+  width: 100%;
 }
 
 .mobile-cta:hover {
@@ -183,7 +207,35 @@
   transform: translateY(-2px);
 }
 
-/* Responsive Styles */
+/* Remove underline on all states for mobile CTA */
+.mobile-cta:link,
+.mobile-cta:visited,
+.mobile-cta:hover,
+.mobile-cta:active {
+  text-decoration: none !important;
+  color: #fff !important;
+}
+
+/* Add the missing animations */
+@keyframes ctaPulse {
+  0%, 100% { 
+    box-shadow: 0 4px 15px rgba(255, 102, 0, 0.3); 
+  }
+  50% { 
+    box-shadow: 0 6px 25px rgba(255, 102, 0, 0.5); 
+  }
+}
+
+@keyframes mobileCTAPulse {
+  0%, 100% { 
+    transform: scale(1); 
+  }
+  50% { 
+    transform: scale(1.02); 
+  }
+}
+
+/* Responsive Styles - UPDATED TO HIDE CTA BUTTON */
 @media (max-width: 900px) {
   .links {
     display: none;
@@ -193,8 +245,9 @@
     display: block;
   }
   
+  /* FIXED: Hide the CTA button on mobile */
   .cta {
-    display: none;
+    display: none !important;
   }
   
   .navbar {
@@ -213,7 +266,7 @@
   }
   
   .brand img {
-    width: 32px;
+    width: 100px; /* Reduced from 125px for better mobile fit */
   }
   
   .mobile-menu {
@@ -229,64 +282,4 @@
   .mobile-menu {
     display: none !important;
   }
-}
-.cta {
-  display: inline-block;
-  padding: 12px 24px;
-  background: linear-gradient(135deg, #ff6600, #ff8533);
-  color: #fff !important; /* Force color to override link defaults */
-  border: none;
-  border-radius: 25px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  font-size: 1rem;
-  font-family: 'Poppins', sans-serif;
-  z-index: 1001;
-  position: relative;
-  overflow: hidden;
-  animation: ctaPulse 3s ease-in-out infinite;
-  box-shadow: 0 4px 15px rgba(255, 102, 0, 0.3);
-  text-decoration: none !important; /* Force remove underline */
-  text-align: center;
-}
-
-/* Remove underline on all states */
-.cta:link,
-.cta:visited,
-.cta:hover,
-.cta:active {
-  text-decoration: none !important;
-  color: #fff !important;
-}
-
-.mobile-cta {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 14px 24px;
-  background: linear-gradient(135deg, #ff6600, #ff8533);
-  color: #fff !important; /* Force color to override link defaults */
-  border: none;
-  border-radius: 25px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  font-size: 1rem;
-  font-family: 'Poppins', sans-serif;
-  position: relative;
-  overflow: hidden;
-  animation: mobileCTAPulse 2s ease-in-out infinite;
-  box-shadow: 0 4px 15px rgba(255, 102, 0, 0.3);
-  text-decoration: none !important; /* Force remove underline */
-  text-align: center;
-  width: 100%;
-}
-
-/* Remove underline on all states for mobile CTA */
-.mobile-cta:link,
-.mobile-cta:visited,
-.mobile-cta:hover,
-.mobile-cta:active {
-  text-decoration: none !important;
-  color: #fff !important;
 }

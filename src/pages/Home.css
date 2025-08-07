@@ -6,20 +6,88 @@
   background: #ffffff;
 }
 
-/* ---------- GLOBAL UTILITIES ---------- */
+/* ---------- ENHANCED GLOBAL UTILITIES ---------- */
 .btn-primary, .btn-outline {
+  display: inline-block;
   padding: 12px 28px;
   font-weight: 600;
   border-radius: 8px;
   cursor: pointer;
-  transition: opacity .25s;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  font-size: 1rem;
+  text-decoration: none !important;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid transparent;
+  color: #ff6600;
 }
 
-.btn-primary  { background:#ff6600; color:#fff; border:0; }
-.btn-outline  { background:transparent; border:2px solid #ff6600; color:#ff6600; }
+/* Primary Button - Orange */
+.btn-primary {
+  background: linear-gradient(135deg, #ff6600, #ff8533);
+  color: #fff !important;
+  border-color: #ff6600;
+}
 
-.btn-primary:hover,
-.btn-outline:hover { opacity:.85; }
+/* Outline Button - Orange Border */
+.btn-outline {
+  background: transparent;
+  border: 2px solid #ff6600;
+  color: #ff6600 !important;
+}
+
+/* Enhanced Hover Effects */
+.btn-primary::before,
+.btn-outline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.6s ease;
+  z-index: 1;
+}
+
+.btn-primary:hover::before,
+.btn-outline:hover::before {
+  left: 100%;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #ff8533, #ffaa66);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(255, 102, 0, 0.4);
+  border-color: #ff8533;
+}
+
+.btn-outline:hover {
+  background: linear-gradient(135deg, #ff6600, #ff8533);
+  color: #fff !important;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(255, 102, 0, 0.4);
+  border-color: #ff6600;
+}
+
+/* Remove any link styling */
+.btn-primary:link,
+.btn-primary:visited,
+.btn-primary:active,
+.btn-outline:link,
+.btn-outline:visited,
+.btn-outline:active {
+  text-decoration: none !important;
+}
+
+.btn-primary:link {
+  color: #fff !important;
+}
+
+.btn-outline:link {
+  color: #ff6600 !important;
+}
 
 /* ---------- HERO ---------- */
 .hero {
@@ -275,6 +343,12 @@
   .card-grid {
     grid-template-columns: 1fr;
   }
+  
+  .btn-primary,
+  .btn-outline {
+    width: 100%;
+    max-width: 280px;
+  }
 }
 
 @media (min-width: 900px) {
@@ -301,4 +375,35 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+}
+.btn-primary,
+.btn-outline {
+  padding: 14px 32px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.25s;
+  font-size: 1rem;
+}
+
+.btn-primary {
+  background: #fff;
+  color: #ff6600;
+  border: 2px solid #fff;
+}
+.btn-outline {
+  background: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+}
+
+.btn-primary:hover {
+  background: #f8f9fa;
+  transform: translateY(-2px);
+}
+
+.btn-outline:hover {
+  background: #fff;
+  color: #ff6600;
+  transform: translateY(-2px);
 }
