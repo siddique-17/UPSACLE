@@ -125,7 +125,7 @@ export default function Pricing() {
             <div className="addon-card">
               <div className="addon-icon">📸</div>
               <h3>Product Photography</h3>
-              <div className="addon-price">₹49<span>/product</span></div>
+              <div className="addon-price">₹499<span>/product</span></div>
               <p>Professional product photography and editing</p>
               <button className="addon-button">Add to Plan</button>
             </div>

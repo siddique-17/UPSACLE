@@ -24,6 +24,15 @@ export default function Contact() {
     }));
   };
 
+  // Handle WhatsApp click
+  const handleWhatsAppClick = () => {
+    const phoneNumber = "7550194133"; // Your phone number without + and spaces
+    const message = "Hi UPSCALE! I'm interested in your e-commerce services and would like to discuss my business growth opportunities.";
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+    window.open(whatsappURL, '_blank');
+  };
+
   // Handle form submission with Web3Forms
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -131,7 +140,7 @@ export default function Contact() {
                 <div className="contact-icon address-icon">📍</div>
                 <div className="contact-details">
                   <h3>Address</h3>
-                  <p>Haven City, Karungulam, Tirunelveli – 627356</p>
+                  <p>Haven City, Karungulam, Tirunelveli – 627356</p>
                 </div>
               </div>
 
@@ -149,7 +158,7 @@ export default function Contact() {
                 <div className="whatsapp-content">
                   <h3>Quick Response on WhatsApp</h3>
                   <p>Get instant answers to your questions. Chat with our experts on WhatsApp for immediate assistance.</p>
-                  <button className="whatsapp-btn">
+                  <button className="whatsapp-btn" onClick={handleWhatsAppClick}>
                     <span className="whatsapp-logo">📱</span>
                     Chat on WhatsApp
                   </button>

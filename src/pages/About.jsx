@@ -121,40 +121,28 @@ export default function About() {
 
           <div className="team-grid">
             <div className="team-member">
-              <div className="member-image">
+              {/* <div className="member-image">
                 <img src={sarahImg} alt="Sarah Johnson" />
-              </div>
-              <h3>Person-1</h3>
+              </div> */}
+              <h3>Mohamed Yaseen</h3>
               <p className="member-title">CEO & Founder</p>
               <p className="member-desc">
-                Former Amazon executive with 10+ years in e-
-                commerce strategy and business development.
+                With a strong vision for empowering local sellers, Yaseen leads Upscale’s mission to help brands grow across platforms like Amazon, Flipkart, Meesho, and beyond.
               </p>
             </div>
 
             <div className="team-member">
-              <div className="member-image">
+              {/* <div className="member-image">
                 <img src={michaelImg} alt="Michael Chen" />
-              </div>
-              <h3>Person-2</h3>
-              <p className="member-title">Head of Operations</p>
+              </div> */}
+              <h3>Mohamed Abdul Basith</h3>
+              <p className="member-title">Head of operations and accountant</p>
               <p className="member-desc">
-                E-commerce optimization expert specializing in
-                conversion rate improvement and analytics.
+                Ensures smooth onboarding, client coordination, and seamless execution of all marketplace operations. His focus is on timely delivery and quality service.
               </p>
             </div>
 
-            <div className="team-member">
-              <div className="member-image">
-                <img src={priyaImg} alt="Priya Sharma" />
-              </div>
-              <h3>Person-3</h3>
-              <p className="member-title">Marketing Director</p>
-              <p className="member-desc">
-                Digital marketing strategist with expertise in PPC
-                campaigns and brand positioning.
-              </p>
-            </div>
+            
           </div>
         </section>
 

@@ -204,7 +204,7 @@
   
   color: #000000 !important; /* Light gray color for better readability */
   transition: color 0.3s ease;
-  opacity: 1 !important; /* Remove any opacity issues */
+  /* opacity: 1 !important;  */
 
 }
 
@@ -277,4 +277,7 @@
   .contact-item {
     justify-content: center;
   }
+}
+.contact-item .loc {
+  color: #000000 !important; /* Black color */
 }
