@@ -389,3 +389,52 @@
     max-width: 300px;
   }
 }
+
+/* Professional Icon Styling */
+.check-icon {
+  color: #ff6600; /* Your orange theme color */
+  margin-right: 10px;
+  font-size: 1.1rem;
+}
+
+.growth-icon {
+  color: #ff6600; /* Your orange theme color */
+  font-size: 2.5rem;
+  margin-right: 15px;
+  flex-shrink: 0;
+}
+
+.reason-icon {
+  color: #ff6600; /* Your orange theme color */
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  transition: all 0.3s ease;
+}
+
+/* Hover effects for reason cards */
+.reason-card:hover .reason-icon {
+  transform: scale(1.1);
+  color: #ff8533; /* Lighter orange on hover */
+}
+
+/* Mission list styling */
+.mission-list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/* Growth highlight section */
+.growth-highlight {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 20px;
+}
+
+/* Alternative color scheme if you prefer gradient effects */
+.check-icon {
+  background: linear-gradient(135deg, #ff6600, #ff8533);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}

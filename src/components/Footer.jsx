@@ -1,6 +1,15 @@
 import { Link } from 'react-router-dom';
 import './Footer.css';
 import logo from '../assets/logo.png';
+// Import professional icons
+import { 
+  FaLinkedin, 
+  FaInstagram, 
+  FaWhatsapp, 
+  FaEnvelope, 
+  FaPhone, 
+  FaMapMarkerAlt 
+} from 'react-icons/fa';
 
 export default function Footer() {
   // Function to scroll to top
@@ -34,7 +43,7 @@ export default function Footer() {
                 className="social-icon linkedin"
                 aria-label="Follow us on LinkedIn"
               >
-                💼
+                <FaLinkedin />
               </a>
               <a 
                 href="https://www.instagram.com/upscale_grow_your_business/" 
@@ -43,16 +52,16 @@ export default function Footer() {
                 className="social-icon instagram"
                 aria-label="Follow us on Instagram"
               >
-                📷
+                <FaInstagram />
               </a>
               <a 
-                href="https://wa.me/8888888888" 
+                href="https://wa.me/7550194133" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="social-icon whatsapp"
                 aria-label="Chat with us on WhatsApp"
               >
-                💬
+                <FaWhatsapp />
               </a>
             </div>
           </div>
@@ -84,18 +93,17 @@ export default function Footer() {
         <div className="footer__section">
           <h4>Contact Info</h4>
           <div className="contact-item">
-            <span className="contact-icon">📧</span>
-            <a href="mailto:info@upscale.com">upscalegrowyourbusiness@gmail.com</a>
+            <FaEnvelope className="contact-icon" />
+            <a href="mailto:upscalegrowyourbusiness@gmail.com">upscalegrowyourbusiness@gmail.com</a>
           </div>
           <div className="contact-item">
-            <span className="contact-icon">📞</span>
-            <a href="tel:+919876543210">+91 7550194133</a>
+            <FaPhone className="contact-icon" />
+            <a href="tel:+917550194133">+91 7550194133</a>
           </div>
           <div className="contact-item">
-            <span className="contact-icon">📍</span>
-            <span>Melapalayam, Tirunelveli - 627005</span>
+            <FaMapMarkerAlt className="contact-icon" />
+            <span className="loc">Melapalayam, Tirunelveli - 627005</span>
           </div>
-         
         </div>
       </div>
 

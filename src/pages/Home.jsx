@@ -3,6 +3,16 @@ import Navbar from '../components/Navbar';
 import './Home.css';
 import heroImg from '../assets/hero.jpeg';
 import { Link } from 'react-router-dom';
+// Import React Icons
+import { 
+  FaUsers,
+  FaChartBar,
+  FaSearch,
+  FaChartLine,
+  FaBullseye,
+  FaUserFriends,
+  FaLightbulb 
+} from 'react-icons/fa';
 
 export default function Home() {
   return (
@@ -42,46 +52,14 @@ export default function Home() {
           </div>
 
           <div className="badge bottom">
-            <strong>👥 Expert Team</strong><br />
-            <span>Dedicated Support</span>
+            <FaUsers className="badge-icon" />
+            <div className="badge-text">
+              <strong>Expert Team</strong><br />
+              <span>Dedicated Support</span>
+            </div>
           </div>
         </div>
       </section>
-
-      {/* ========== FIRST SERVICES ROW ========== */}
-      {/* <section className="services-row">
-        <div className="card-grid">
-          {[
-            {
-              icon: '🎯',
-              title: 'Advertising Management',
-              desc: 'Strategic advertising campaigns across all platforms to maximize ROI and drive targeted traffic to your products.',
-              list: ['PPC management','Campaign optimization','Budget planning','ROI tracking']
-            },
-            {
-              icon: '👥',
-              title: 'Customer Feedback',
-              desc: 'Proactive customer feedback management to maintain high ratings and resolve issues before they impact your business.',
-              list: ['Review monitoring','Response management','Issue resolution','Rating improvement']
-            },
-            {
-              icon: '💡',
-              title: 'Expert Mentoring',
-              desc: 'One on one mentoring sessions with e-commerce experts to develop your skills and business strategy.',
-              list: ['Strategic guidance','Skill development','Market insights','Growth planning']
-            }
-          ].map(card => (
-            <article className="card" key={card.title}>
-              <div className="icon">{card.icon}</div>
-              <h3>{card.title}</h3>
-              <p>{card.desc}</p>
-              <ul>
-                {card.list.map(li => <li key={li}>{li}</li>)}
-              </ul>
-            </article>
-          ))}
-        </div>
-      </section> */}
 
       {/* ========== MAIN SERVICES SECTION ========== */}
       <section id="services" className="services">
@@ -94,37 +72,37 @@ export default function Home() {
         <div className="card-grid">
           {[
             {
-              icon: '📊',
+              icon: <FaChartBar />,
               title: 'Account Management',
               desc: 'Complete management of your Amazon, Flipkart, JioMart and Meesho accounts with daily monitoring and optimization.',
               list: ['Daily account monitoring','Performance tracking','Issue resolution','Strategy planning']
             },
             {
-              icon: '🔍',
+              icon: <FaSearch />,
               title: 'Product Listing',
               desc: 'Professional product listing services with SEO-optimized titles, descriptions, and high-quality images.',
               list: ['SEO optimization','Professional photography','Compelling descriptions','Keyword research']
             },
             {
-              icon: '📈',
+              icon: <FaChartLine />,
               title: 'Product Optimization',
               desc: 'Data-driven optimization of your product listings to improve visibility, conversion rates, and sales performance.',
               list: ['A/B testing','Conversion optimization','Price strategy','Performance analysis']
             },
              {
-              icon: '🎯',
+              icon: <FaBullseye />,
               title: 'Advertising Management',
               desc: 'Strategic advertising campaigns across all platforms to maximize ROI and drive targeted traffic to your products.',
               list: ['PPC management','Campaign optimization','Budget planning','ROI tracking']
             },
             {
-              icon: '👥',
+              icon: <FaUserFriends />,
               title: 'Customer Feedback',
               desc: 'Proactive customer feedback management to maintain high ratings and resolve issues before they impact your business.',
               list: ['Review monitoring','Response management','Issue resolution','Rating improvement']
             },
             {
-              icon: '💡',
+              icon: <FaLightbulb />,
               title: 'Expert Mentoring',
               desc: 'One on one mentoring sessions with e-commerce experts to develop your skills and business strategy.',
               list: ['Strategic guidance','Skill development','Market insights','Growth planning']

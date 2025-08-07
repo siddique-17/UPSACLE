@@ -17,7 +17,6 @@
   padding: 60px 6vw 0;
   width: 100%;
   box-sizing: border-box;
- 
 }
 
 .footer__content {
@@ -174,7 +173,8 @@
   transform: translateX(5px);
 }
 
-/* Contact Info */
+/* Contact Info - Updated for React Icons */
+/* Contact Info - Color Corrected */
 .contact-item {
   display: flex;
   align-items: center;
@@ -191,36 +191,57 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  color: #e83e3e !important; /* Ensure icon color is white */
+  background-color: transparent;
 }
 
 .contact-item a {
-  color: #060606;
+  color: #000000 !important; /* Light gray color for better readability */
   transition: color 0.3s ease;
+  opacity: 1 !important; /* Remove any opacity issues */
+}
+.loc{
+  
+  color: #000000 !important; /* Light gray color for better readability */
+  transition: color 0.3s ease;
+  opacity: 1 !important; /* Remove any opacity issues */
+
 }
 
 .contact-item a:hover {
-  color: #ff6600;
+  color: #ff6600 !important;
 }
 
-.contact-item span:hover {
-  color: #ff6600;
-}
 .contact-item span:not(.contact-icon) {
-  color: #000000;
+  color: #b8c5d1 !important; /* Light gray color matching your theme */
+  opacity: 1 !important; /* Remove any opacity issues */
+  transition: color 0.3s ease;
 }
 
-/* Bottom Section */
+.contact-item span:not(.contact-icon):hover {
+  color: #ff6600 !important;
+}
+
+/* Additional fix for any inherited styles */
+.footer__section .contact-item * {
+  text-decoration: none !important;
+}
+
+/* Bottom Section - Centered Copyright */
 .footer__bottom {
   border-top: 1px solid #34495e;
   padding: 25px 0;
   text-align: center;
-  margin-top: 20px;
+  margin-bottom: 10px;
+  width: 100%;
 }
 
 .footer__bottom p {
   color: #b8c5d1;
-  margin: 0;
+  margin: 0 auto;
   font-size: 0.9rem;
+  text-align: center;
+  max-width: 1200px;
 }
 
 /* Responsive Design */

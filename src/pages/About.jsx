@@ -1,6 +1,17 @@
 import './About.css';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+// Import React Icons
+import { 
+  FaCheckCircle,
+  FaChartLine,
+  FaBullseye,
+  FaUsers,
+  FaChartBar,
+  FaSync,
+  FaBolt,
+  FaDollarSign 
+} from 'react-icons/fa';
 
 // Import your images - replace these with actual paths
 import aboutHeroImg from '../assets/hero.jpeg';
@@ -56,22 +67,23 @@ export default function About() {
             <div className="mission">
               <h2>Our Mission</h2>
               <p>
-                To empower businesses of all sizes to achieve extraordinary growth on
-                e-commerce platforms through account management, strategic
-                optimization, and data-driven insights.
+                  At Upscale, our mission is to empower small and medium businesses to grow online by providing affordable, effective, and result-driven e-commerce solutions.
+                  We are committed to helping entrepreneurs launch, manage, and scale their businesses across platforms like Amazon, Flipkart, Meesho, and more.
+                  Our goal is to be the trusted growth partner for every seller by offering expert services in account management, product listings, branding, and marketing — all under one roof.
+                  We believe in growth with integrity, personalized support, and building long-term relationships that help our clients succeed in the digital world.
               </p>
               
               <ul className="mission-list">
                 <li>
-                  <span className="check-icon">✓</span>
+                  <FaCheckCircle className="check-icon" />
                   Maximize your e-commerce potential
                 </li>
                 <li>
-                  <span className="check-icon">✓</span>
+                  <FaCheckCircle className="check-icon" />
                   Deliver measurable results and ROI
                 </li>
                 <li>
-                  <span className="check-icon">✓</span>
+                  <FaCheckCircle className="check-icon" />
                   Provide exceptional customer service
                 </li>
               </ul>
@@ -80,13 +92,13 @@ export default function About() {
             <div className="vision">
               <h2>Our Vision</h2>
               <p>
-                To become the leading e-commerce growth partner globally, helping
-                thousands of businesses scale successfully across all major platforms
-                while maintaining the highest standards of service.
+                Our vision at Upscale is to become South India's leading e-commerce growth partner — trusted by thousands of sellers for driving real online success.
+                We aim to revolutionize the digital journey for small and medium businesses by making e-commerce simple, accessible, and profitable for everyone.
+                We envision a future where every local seller can compete globally, build their brand, and grow without limits — all with the power of the right support and strategy.
               </p>
 
               <div className="growth-highlight">
-                <div className="growth-icon">📈</div>
+                <FaChartLine className="growth-icon" />
                 <div>
                   <h3>Growth-Focused Approach</h3>
                   <p>
@@ -156,7 +168,7 @@ export default function About() {
 
           <div className="reasons-grid">
             <div className="reason-card">
-              <div className="reason-icon">🎯</div>
+              <FaBullseye className="reason-icon" />
               <h3>Proven Track Record</h3>
               <p>
                 Over 500+ successful client partnerships with an average
@@ -165,7 +177,7 @@ export default function About() {
             </div>
 
             <div className="reason-card">
-              <div className="reason-icon">👨‍💼</div>
+              <FaUsers className="reason-icon" />
               <h3>Expert Team</h3>
               <p>
                 Our team consists of former platform executives and
@@ -174,7 +186,7 @@ export default function About() {
             </div>
 
             <div className="reason-card">
-              <div className="reason-icon">📊</div>
+              <FaChartBar className="reason-icon" />
               <h3>Data-Driven Approach</h3>
               <p>
                 Every decision is backed by comprehensive analytics
@@ -183,7 +195,7 @@ export default function About() {
             </div>
 
             <div className="reason-card">
-              <div className="reason-icon">🔄</div>
+              <FaSync className="reason-icon" />
               <h3>Comprehensive Service</h3>
               <p>
                 From account setup to advanced optimization, we handle
@@ -192,7 +204,7 @@ export default function About() {
             </div>
 
             <div className="reason-card">
-              <div className="reason-icon">⚡</div>
+              <FaBolt className="reason-icon" />
               <h3>24/7 Support</h3>
               <p>
                 Round-the-clock monitoring and support to ensure your
@@ -201,7 +213,7 @@ export default function About() {
             </div>
 
             <div className="reason-card">
-              <div className="reason-icon">💰</div>
+              <FaDollarSign className="reason-icon" />
               <h3>Guaranteed ROI</h3>
               <p>
                 We're so confident in our services that we offer

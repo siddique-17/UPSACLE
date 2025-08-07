@@ -28,23 +28,22 @@ export default function Pricing() {
             {/* Starter Plan */}
             <div className="pricing-card">
               <div className="card-header">
-                <h3>Starter</h3>
+                <h3>STARTER</h3>
                 <p>Perfect for small businesses starting their e-commerce journey</p>
                 <div className="price">
-                  <span className="currency">$</span>
-                  <span className="amount">299</span>
+                  <span className="currency">₹</span>
+                  <span className="amount">4499</span>
                   <span className="period">/month</span>
                 </div>
               </div>
 
               <div className="features-list">
                 <ul>
-                  <li><span className="check">✓</span> Single platform management (Amazon OR Flipkart)</li>
-                  <li><span className="check">✓</span> Basic product listing optimization</li>
-                  <li><span className="check">✓</span> Monthly performance reports</li>
-                  <li><span className="check">✓</span> Email support</li>
-                  <li><span className="check">✓</span> Up to 50 products</li>
-                  <li><span className="check">✓</span> Basic keyword research</li>
+                  <li><span className="check">✓</span> account opening</li>
+                  <li><span className="check">✓</span> photo shoot</li>
+                  <li><span className="check">✓</span> product listing</li>
+                  <li><span className="check">✓</span> monthly gst report</li>
+                  <li><span className="check">✓</span> Account management</li>
                 </ul>
               </div>
 
@@ -55,24 +54,23 @@ export default function Pricing() {
             <div className="pricing-card featured">
               <div className="popular-badge">Most Popular</div>
               <div className="card-header">
-                <h3>Professional</h3>
+                <h3>GROWTH</h3>
                 <p>Ideal for growing businesses ready to scale across platforms</p>
                 <div className="price">
-                  <span className="currency">$</span>
-                  <span className="amount">599</span>
+                  <span className="currency">₹</span>
+                  <span className="amount">6999</span>
                   <span className="period">/month</span>
                 </div>
               </div>
 
               <div className="features-list">
                 <ul>
-                  <li><span className="check">✓</span> Multi-platform management (2 platforms)</li>
-                  <li><span className="check">✓</span> Advanced product optimization</li>
-                  <li><span className="check">✓</span> Weekly performance reports</li>
-                  <li><span className="check">✓</span> Priority email & phone support</li>
-                  <li><span className="check">✓</span> Up to 200 products</li>
-                  <li><span className="check">✓</span> Advanced keyword research & SEO</li>
-                  <li><span className="check">✓</span> Basic advertising management</li>
+                  <li><span className="check">✓</span> account opening</li>
+                  <li><span className="check">✓</span> photo shoot</li>
+                  <li><span className="check">✓</span> product listing</li>
+                  <li><span className="check">✓</span> monthly gst report</li>
+                  <li><span className="check">✓</span> Ads management</li>
+                  <li><span className="check">✓</span> Account management</li>
                 </ul>
               </div>
 
@@ -82,24 +80,24 @@ export default function Pricing() {
             {/* Enterprise Plan */}
             <div className="pricing-card">
               <div className="card-header">
-                <h3>Enterprise</h3>
+                <h3>PROFESSIONAL</h3>
                 <p>Comprehensive solution for established businesses</p>
                 <div className="price">
-                  <span className="currency">$</span>
-                  <span className="amount">1,299</span>
+                  <span className="currency">₹</span>
+                  <span className="amount">9999</span>
                   <span className="period">/month</span>
                 </div>
               </div>
-
               <div className="features-list">
                 <ul>
-                  <li><span className="check">✓</span> All platform management (Amazon, Flipkart, Jiomart, Meesho)</li>
-                  <li><span className="check">✓</span> Premium optimization & A+ content</li>
-                  <li><span className="check">✓</span> Daily performance reports</li>
-                  <li><span className="check">✓</span> 24/7 dedicated support</li>
-                  <li><span className="check">✓</span> Unlimited products</li>
-                  <li><span className="check">✓</span> Advanced SEO & competitor analysis</li>
-                  <li><span className="check">✓</span> Full advertising campaign management</li>
+                  <li><span className="check">✓</span> account opening</li>
+                  <li><span className="check">✓</span> photo shoot with AI</li>
+                  <li><span className="check">✓</span> product listing</li>
+                  <li><span className="check">✓</span> monthly gst report</li>
+                  <li><span className="check">✓</span> Ads management </li>
+                  <li><span className="check">✓</span> A+ content</li>
+                  <li><span className="check">✓</span> competitor analysis</li>
+                  <li><span className="check">✓</span> Account management</li>
                 </ul>
               </div>
 
@@ -119,7 +117,7 @@ export default function Pricing() {
             <div className="addon-card">
               <div className="addon-icon">👨‍🏫</div>
               <h3>Expert Mentoring</h3>
-              <div className="addon-price">$149<span>/hour</span></div>
+              <div className="addon-price">₹149<span>/hour</span></div>
               <p>One-on-one sessions with e-commerce experts</p>
               <button className="addon-button">Add to Plan</button>
             </div>
@@ -127,7 +125,7 @@ export default function Pricing() {
             <div className="addon-card">
               <div className="addon-icon">📸</div>
               <h3>Product Photography</h3>
-              <div className="addon-price">$49<span>/product</span></div>
+              <div className="addon-price">₹49<span>/product</span></div>
               <p>Professional product photography and editing</p>
               <button className="addon-button">Add to Plan</button>
             </div>
@@ -135,7 +133,7 @@ export default function Pricing() {
             <div className="addon-card">
               <div className="addon-icon">✍️</div>
               <h3>A+ Content Creation</h3>
-              <div className="addon-price">$199<span>/listing</span></div>
+              <div className="addon-price">₹1200<span>/listing</span></div>
               <p>Premium Amazon A+ content design and copywriting</p>
               <button className="addon-button">Add to Plan</button>
             </div>
@@ -143,7 +141,7 @@ export default function Pricing() {
             <div className="addon-card">
               <div className="addon-icon">🏪</div>
               <h3>Brand Store Setup</h3>
-              <div className="addon-price">$499<span>/one-time</span></div>
+              <div className="addon-price">₹499<span>/one-time</span></div>
               <p>Complete Amazon Brand Store design and setup</p>
               <button className="addon-button">Add to Plan</button>
             </div>
