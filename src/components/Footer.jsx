@@ -22,6 +22,40 @@ export default function Footer() {
             across major platforms. We provide comprehensive account
             management, optimization, and growth strategies.
           </p>
+          
+          {/* Social Media Links */}
+          <div className="footer__social">
+            <h5>Follow Us</h5>
+            <div className="social-links">
+              <a 
+                href="https://www.instagram.com/upscale_grow_your_business/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="social-icon linkedin"
+                aria-label="Follow us on LinkedIn"
+              >
+                💼
+              </a>
+              <a 
+                href="https://www.instagram.com/upscale_grow_your_business/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="social-icon instagram"
+                aria-label="Follow us on Instagram"
+              >
+                📷
+              </a>
+              <a 
+                href="https://wa.me/8888888888" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="social-icon whatsapp"
+                aria-label="Chat with us on WhatsApp"
+              >
+                💬
+              </a>
+            </div>
+          </div>
         </div>
 
         {/* Quick Links */}
@@ -61,6 +95,7 @@ export default function Footer() {
             <span className="contact-icon">📍</span>
             <span>Melapalayam, Tirunelveli - 627005</span>
           </div>
+         
         </div>
       </div>
 
