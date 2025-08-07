@@ -121,13 +121,7 @@ export default function Pricing() {
           </p>
 
           <div className="addons-grid">
-            <div className="addon-card">
-              <div className="addon-icon"><FaUserTie /></div>
-              <h3>Expert Mentoring</h3>
-              <div className="addon-price">₹149<span>/hour</span></div>
-              <p>One-on-one sessions with e-commerce experts</p>
-              <button className="addon-button">Add to Plan</button>
-            </div>
+           
 
             <div className="addon-card">
               <div className="addon-icon"><FaCamera /></div>

@@ -35,6 +35,8 @@
   font-weight: 600;
   margin-bottom: 20px;
   position: relative;
+  display: inline-block; /* UPDATED: Ensures the element takes only the width of its content */
+  width: auto; /* UPDATED: Allows natural width */
 }
 
 .footer__section h4::after {
@@ -42,7 +44,8 @@
   position: absolute;
   bottom: -5px;
   left: 0;
-  width: 30px;
+  width: 100%; /* UPDATED: Changed from fixed 30px to 100% of the text width */
+  max-width: 40px; /* UPDATED: Added max-width to prevent overly long lines */
   height: 2px;
   background: linear-gradient(90deg, #ff6600, #ff8533);
   border-radius: 2px;
@@ -191,21 +194,19 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #e83e3e !important; /* Ensure icon color is white */
+  color: #e83e3e !important;
   background-color: transparent;
 }
 
 .contact-item a {
-  color: #000000 !important; /* Light gray color for better readability */
+  color: #000000 !important;
   transition: color 0.3s ease;
-  opacity: 1 !important; /* Remove any opacity issues */
+  opacity: 1 !important;
 }
-.loc{
-  
-  color: #000000 !important; /* Light gray color for better readability */
-  transition: color 0.3s ease;
-  /* opacity: 1 !important;  */
 
+.loc{
+  color: #000000 !important;
+  transition: color 0.3s ease;
 }
 
 .contact-item a:hover {
@@ -213,8 +214,8 @@
 }
 
 .contact-item span:not(.contact-icon) {
-  color: #b8c5d1 !important; /* Light gray color matching your theme */
-  opacity: 1 !important; /* Remove any opacity issues */
+  color: #0a0b0b !important;
+  opacity: 1 !important;
   transition: color 0.3s ease;
 }
 
@@ -258,6 +259,22 @@
   .social-links {
     justify-content: center;
   }
+  
+  /* UPDATED: Center headings and adjust underline position for mobile */
+  .footer__section h4,
+  .footer__section h5 {
+    text-align: center;
+    display: block;
+    margin: 0 auto 20px;
+    position: relative;
+  }
+  
+  .footer__section h4::after {
+    left: 50%;
+    transform: translateX(-50%); /* UPDATED: Center the line under the text */
+    width: 30px; /* UPDATED: Use fixed width for centered alignment */
+    max-width: none;
+  }
 }
 
 @media (max-width: 480px) {
@@ -277,7 +294,32 @@
   .contact-item {
     justify-content: center;
   }
+  
+  /* UPDATED: Ensure proper heading alignment on very small screens */
+  .footer__section h4,
+  .footer__section h5 {
+    font-size: 1rem; /* Slightly smaller font on very small screens */
+    margin-bottom: 18px;
+  }
+  
+  .footer__section h4::after {
+    width: 25px; /* UPDATED: Slightly smaller underline for very small screens */
+  }
 }
+
+/* UPDATED: Additional responsive breakpoint for extra small screens */
+@media (max-width: 360px) {
+  .footer__section h4,
+  .footer__section h5 {
+    font-size: 0.95rem;
+  }
+  
+  .footer__section h4::after {
+    width: 20px;
+    height: 1.5px;
+  }
+}
+
 .contact-item .loc {
-  color: #000000 !important; /* Black color */
+  color: #000000 !important;
 }

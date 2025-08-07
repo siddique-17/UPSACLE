@@ -232,9 +232,9 @@
 
 .addons-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Force 2 columns for 2x2 grid */
+  grid-template-columns: repeat(3, 1fr); /* Force 2 columns for 2x2 grid */
   gap: 30px;
-  max-width: 800px; /* Reduced max width for better 2x2 layout */
+  max-width: 1000px; /* Reduced max width for better 2x2 layout */
   margin: 0 auto;
 }
 

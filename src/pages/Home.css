@@ -7,7 +7,7 @@
 }
 
 /* ---------- ENHANCED GLOBAL UTILITIES ---------- */
- .btn-outline,.btn-primary {
+.btn-outline,.btn-primary {
   display: inline-block;
   padding: 12px 28px;
   font-weight: 600;
@@ -20,7 +20,6 @@
   position: relative;
   overflow: hidden;
   border: 2px solid transparent;
-
 }
 
 /* Primary Button - Orange */
@@ -197,13 +196,34 @@
   line-height:1.6;
 }
 
+/* UPDATED: Card Grid with proper centering for 5 cards */
 .card-grid {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:28px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+}
+
+/* Center the last 2 cards when there are 5 total */
+.card:nth-child(4) {
+  grid-column: 1 / 2;
+  margin-left: 150px;
+  margin-right: auto;
+}
+
+.card:nth-child(5) {
+  grid-column: 3 / 4;
+  margin-left: auto;
+  margin-right:auto;
+}
+
+/* Alternative approach using flexbox wrapper for last row */
+.card-grid::after {
+  content: '';
+  grid-column: 2 / 3;
+  grid-row: 2;
 }
 
 .card {
@@ -214,6 +234,8 @@
   box-shadow:0 6px 20px rgba(0,0,0,.05);
   transition:transform .25s;
   border: 1px solid #f0f0f0;
+  max-width: 350px;
+  width: 100%;
 }
 
 .card:hover { transform:translateY(-6px); }
@@ -340,14 +362,41 @@
     justify-content: center;
   }
   
+  /* Reset grid for mobile */
   .card-grid {
     grid-template-columns: 1fr;
+  }
+  
+  .card:nth-child(4),
+  .card:nth-child(5) {
+    grid-column: auto;
+    margin-left: auto;
+    margin-right: auto;
   }
   
   .btn-primary,
   .btn-outline {
     width: 100%;
     max-width: 280px;
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+  /* For tablets, use 2 columns and center the last card */
+  .card-grid {
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+  }
+  
+  .card:nth-child(5) {
+    grid-column: 1 / -1;
+    max-width: 350px;
+  }
+  
+  .card:nth-child(4) {
+    grid-column: auto;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
@@ -376,6 +425,7 @@ body {
   padding: 0;
   overflow-x: hidden;
 }
+
 .btn-primary,
 .btn-outline {
   padding: 14px 32px;
@@ -391,6 +441,7 @@ body {
   color: #ff6600;
   border: 2px solid #fff;
 }
+
 .btn-outline {
   background: transparent;
   color: #fff;
@@ -410,7 +461,7 @@ body {
 
 /* Professional Icon Styling for Services */
 .icon {
-  color: #ff6600; /* Your orange theme color */
+  color: #ff6600;
   font-size: 2.5rem;
   margin-bottom: 15px;
   transition: all 0.3s ease;
@@ -419,7 +470,7 @@ body {
 /* Card hover effects */
 .card:hover .icon {
   transform: scale(1.1);
-  color: #ff8533; /* Lighter orange on hover */
+  color: #ff8533;
 }
 
 /* Hero Badge with Icon */
@@ -431,7 +482,7 @@ body {
 }
 
 .badge-icon {
-  color: #ff6600; /* Your orange theme color */
+  color: #ff6600;
   font-size: 1.5rem;
   flex-shrink: 0;
 }

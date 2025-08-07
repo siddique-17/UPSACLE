@@ -100,12 +100,6 @@ export default function Home() {
               title: 'Customer Feedback',
               desc: 'Proactive customer feedback management to maintain high ratings and resolve issues before they impact your business.',
               list: ['Review monitoring','Response management','Issue resolution','Rating improvement']
-            },
-            {
-              icon: <FaLightbulb />,
-              title: 'Expert Mentoring',
-              desc: 'One on one mentoring sessions with e-commerce experts to develop your skills and business strategy.',
-              list: ['Strategic guidance','Skill development','Market insights','Growth planning']
             }
           ].map(card => (
             <article className="card" key={card.title}>
