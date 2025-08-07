@@ -212,7 +212,8 @@ body {
 .services {
   padding: 80px 6vw;
   text-align: center;
-  background: #ffffff;
+  
+   background: linear-gradient(135deg, #fff7f1 0%, #ffffff 60%);
   width: 100%;
   box-sizing: border-box;
 }
@@ -390,7 +391,8 @@ body {
 /* ========== TRUSTED PLATFORM PARTNERS ========== */
 .trusted-partners {
   padding: 80px 6vw;
-  background: linear-gradient(135deg, #fff7f1 0%, #f8f9fa 100%);
+  background: fff7f1;
+  /* background: linear-gradient(135deg, #fff7f1 0%, #f8f9fa 100%); */
   text-align: center;
   width: 100%;
   box-sizing: border-box;
@@ -428,7 +430,9 @@ body {
 }
 
 .platform-card {
-  background: #fff;
+    
+   background: linear-gradient(135deg, #fff7f1 0%, #ffffff 60%);
+  /* background: #fff; */
   padding: 30px 20px;
   border-radius: 16px;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
