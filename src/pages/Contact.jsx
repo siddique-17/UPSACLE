@@ -115,7 +115,7 @@ export default function Contact() {
                 <div className="contact-icon phone-icon">📞</div>
                 <div className="contact-details">
                   <h3>Phone</h3>
-                  <p>+91 1234567890</p>
+                  <p>+91 7550194133</p>
                 </div>
               </div>
 
@@ -123,7 +123,7 @@ export default function Contact() {
                 <div className="contact-icon email-icon">✉️</div>
                 <div className="contact-details">
                   <h3>Email</h3>
-                  <p>info@upscale.com</p>
+                  <p>upscalegrowyourbusiness@gmail.com</p>
                 </div>
               </div>
 

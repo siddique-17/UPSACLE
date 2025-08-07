@@ -85,11 +85,11 @@ export default function Footer() {
           <h4>Contact Info</h4>
           <div className="contact-item">
             <span className="contact-icon">📧</span>
-            <a href="mailto:info@upscale.com">info@upscale.com</a>
+            <a href="mailto:info@upscale.com">upscalegrowyourbusiness@gmail.com</a>
           </div>
           <div className="contact-item">
             <span className="contact-icon">📞</span>
-            <a href="tel:+919876543210">+91 1234567890</a>
+            <a href="tel:+919876543210">+91 7550194133</a>
           </div>
           <div className="contact-item">
             <span className="contact-icon">📍</span>
