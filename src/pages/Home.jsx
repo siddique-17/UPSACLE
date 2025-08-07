@@ -28,7 +28,7 @@ export default function Home() {
 
            <div className="btn-row">
             {/* Updated: Use Link instead of button */}
-            <Link to="/contact" className="btn-primary">Get Started Today</Link>
+            <Link to="/contact" className="btn-primary">Get Started Today </Link>
             <Link to="/services" className="btn-outline">View Services</Link>
           </div>
         </div>

@@ -20,21 +20,21 @@
   position: relative;
   overflow: hidden;
   border: 2px solid transparent;
-  color: #ff6600;
+
 }
 
 /* Primary Button - Orange */
 .btn-primary {
-  background: linear-gradient(135deg, #ff6600, #ff8533);
-  color: #fff ;
-  border-color: #ff6600;
+  background: linear-gradient(135deg, #ff6600, #ff8533) !important;
+  color:white !important;
+  border-color: white !important;
 }
 
 /* Outline Button - Orange Border */
 .btn-outline {
   background: transparent;
-  border: 2px solid #ff6600;
-  color: #ff6600 !important;
+  border: 2px solid #ff6600 !important;
+  color:#ff6600 !important ;
 }
 
 /* Enhanced Hover Effects */

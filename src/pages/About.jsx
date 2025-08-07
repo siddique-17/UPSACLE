@@ -220,8 +220,8 @@ export default function About() {
               their e-commerce growth.
             </p>
             <div className="cta-buttons">
-               <Link to="/contact" className="btn-primary">Get Started Today</Link>
-            <Link to="/services" className="btn-outline">View Services</Link>
+               <Link to="/contact" className="btn-primary1">Get Started Today</Link>
+               <Link to="/services" className="btn-outline1">View Services</Link>
             </div>
           </div>
         </section>

@@ -1,8 +1,13 @@
-import { Link } from 'react-router-dom'; // Add this import
+import { Link } from 'react-router-dom';
 import './Footer.css';
 import logo from '../assets/logo.png';
 
 export default function Footer() {
+  // Function to scroll to top
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <footer className="footer">
       <div className="footer__content">
@@ -23,11 +28,21 @@ export default function Footer() {
         <div className="footer__section">
           <h4>Quick Links</h4>
           <ul>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/about">About Us</Link></li>
-            <li><Link to="/services">Services</Link></li>
-            <li><Link to="/pricing">Pricing</Link></li>
-            <li><Link to="/contact">Contact</Link></li>
+            <li>
+              <Link to="/" onClick={scrollToTop}>Home</Link>
+            </li>
+            <li>
+              <Link to="/about" onClick={scrollToTop}>About Us</Link>
+            </li>
+            <li>
+              <Link to="/services" onClick={scrollToTop}>Services</Link>
+            </li>
+            <li>
+              <Link to="/pricing" onClick={scrollToTop}>Pricing</Link>
+            </li>
+            <li>
+              <Link to="/contact" onClick={scrollToTop}>Contact</Link>
+            </li>
           </ul>
         </div>
 
