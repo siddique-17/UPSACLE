@@ -36,7 +36,8 @@ export default function Navbar() {
 
   return (
     <header className="navbar">
-      <div className="brand">
+      {/* Add conditional class to hide brand when menu is open */}
+      <div className={`brand ${isMenuOpen ? 'brand-hidden' : ''}`}>
         <img src={logo} alt="UPSCALE" />
         {/* <span>UPSCALE</span> */}
       </div>
@@ -101,9 +102,6 @@ export default function Navbar() {
                 <img src={logo} alt="UPSCALE" />
                 <span>UPSCALE</span>
               </div>
-              {/* <button className="mobile-close-btn" onClick={closeMenu}>
-                ✕
-              </button> */}
             </div>
             
             {/* Navigation Links */}
