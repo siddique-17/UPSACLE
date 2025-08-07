@@ -7,6 +7,7 @@ import aboutHeroImg from '../assets/hero.jpeg';
 import sarahImg from '../assets/profile.png';
 import michaelImg from '../assets/profile.png';
 import priyaImg from '../assets/profile.png';
+import { Link } from 'react-router-dom';
 
 export default function About() {
   return (
@@ -219,8 +220,8 @@ export default function About() {
               their e-commerce growth.
             </p>
             <div className="cta-buttons">
-              <button className="btn-primary">Get Started Today</button>
-              <button className="btn-outline">View Our Services</button>
+               <Link to="/contact" className="btn-primary">Get Started Today</Link>
+            <Link to="/services" className="btn-outline">View Services</Link>
             </div>
           </div>
         </section>
