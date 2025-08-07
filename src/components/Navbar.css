@@ -21,6 +21,7 @@
   gap: 10px;
   font-weight: 700;
   z-index: 1001;
+  flex-shrink: 0; /* Prevent brand from shrinking */
 }
 
 .brand img { 
@@ -111,6 +112,8 @@
   cursor: pointer;
   padding: 8px;
   z-index: 1001;
+  flex-shrink: 0; /* Prevent hamburger button from shrinking */
+  margin-left: auto; /* Push to the right */
 }
 
 .hamburger {
@@ -235,7 +238,7 @@
   }
 }
 
-/* Responsive Styles - UPDATED TO HIDE CTA BUTTON */
+/* Responsive Styles - FIXED OVERLAPPING ISSUE */
 @media (max-width: 900px) {
   .links {
     display: none;
@@ -245,13 +248,25 @@
     display: block;
   }
   
-  /* FIXED: Hide the CTA button on mobile */
+  /* Hide the CTA button on mobile */
   .cta {
     display: none !important;
   }
   
   .navbar {
     padding: 0 4vw;
+    gap: 15px; /* Add gap between brand and hamburger menu */
+  }
+  
+  /* Ensure proper spacing on mobile */
+  .brand {
+    max-width: calc(100% - 60px); /* Reserve space for hamburger button */
+  }
+  
+  .brand span {
+    white-space: nowrap; /* Prevent text wrapping */
+    overflow: hidden; /* Hide overflow if needed */
+    text-overflow: ellipsis; /* Add ellipsis if text is too long */
   }
 }
 
@@ -259,19 +274,40 @@
   .navbar {
     height: 64px;
     padding: 0 20px;
+    gap: 10px; /* Smaller gap on very small screens */
   }
   
   .brand span {
-    font-size: 1.1rem;
+    font-size: 1rem; /* Smaller font size */
   }
   
   .brand img {
-    width: 100px; /* Reduced from 125px for better mobile fit */
+    width: 80px; /* Further reduced for very small screens */
   }
   
   .mobile-menu {
     width: 250px;
     padding: 80px 25px 25px;
+  }
+  
+  /* Additional spacing for very small screens */
+  .brand {
+    max-width: calc(100% - 50px);
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 320px) {
+  .navbar {
+    padding: 0 15px;
+  }
+  
+  .brand img {
+    width: 70px;
+  }
+  
+  .brand span {
+    font-size: 0.9rem;
   }
 }
 
