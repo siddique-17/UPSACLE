@@ -170,27 +170,31 @@
   margin-bottom: 8px;
   font-size: 0.95rem;
 }
-.form-group textarea{
-    width: 100%;
-  padding: 12px 16px;
-  border: 2px solid #e9ecef;
-  border-radius: 8px;
-  font-size: 1rem;
-  transition: border-color 0.25s;
-  font-family: inherit;
-}
-.form-group input,
-.form-group select
- {
-  width: 210%;
-  padding: 12px 16px;
-  border: 2px solid #e9ecef;
-  border-radius: 8px;
-  font-size: 1rem;
-  transition: border-color 0.25s;
-  font-family: inherit;
-}
 
+/* FIXED: Input responsiveness for all screen sizes */
+.form-group input,
+.form-group select {
+  width: 200%;
+  max-width: 200%;
+  padding: 12px 16px;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.25s;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+.form-group textarea {
+  width: 100%;
+  max-width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.25s;
+  font-family: inherit;
+  box-sizing: border-box;
+}
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
@@ -296,6 +300,14 @@
   .form-row {
     grid-template-columns: 1fr;
   }
+  
+  /* Ensure inputs stay within bounds on smaller screens */
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    max-width: 100%;
+  }
 }
 
 @media (max-width: 768px) {
@@ -321,6 +333,16 @@
   .additional-info {
     padding: 60px 6vw;
   }
+  
+  /* Additional mobile form adjustments */
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    font-size: 16px; /* Prevents zoom on iOS */
+    padding: 10px 12px;
+    width: 100%;
+    max-width: 100%;
+  }
 }
 
 @media (max-width: 480px) {
@@ -336,7 +358,26 @@
     width: 100%;
     justify-content: center;
   }
+  
+  /* Extra small screen form adjustments */
+  .form-row {
+    gap: 15px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  /* Ensure no overflow on very small screens */
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0; /* Allow shrinking if needed */
+  }
 }
+
 /* Icon styling for professional appearance */
 .contact-icon svg,
 .whatsapp-icon svg,
@@ -354,7 +395,7 @@
 }
 
 .whatsapp-logo svg {
-  color: #ffffff; /* WhatsApp green */
+  color: #ffffff;
   margin-right: 8px;
 }
 
