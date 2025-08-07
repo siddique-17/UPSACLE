@@ -11,8 +11,22 @@ import {
   FaChartLine,
   FaBullseye,
   FaUserFriends,
-  FaLightbulb 
+  FaLightbulb,
+  FaShieldAlt,
+  FaCertificate,
+  FaHeadset,
+  FaAmazon,
+  FaStore
 } from 'react-icons/fa';
+import { 
+  SiFlipkart
+} from 'react-icons/si';
+import { 
+  MdSecurity,
+  MdVerifiedUser,
+  MdSupport,
+  MdGroups
+} from 'react-icons/md';
 
 export default function Home() {
   return (
@@ -60,6 +74,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* ========== NEW: TRUSTED PLATFORM PARTNERS ========== */}
+      
 
       {/* ========== MAIN SERVICES SECTION ========== */}
       <section id="services" className="services">
@@ -156,7 +173,7 @@ export default function Home() {
             }
           ].map(t => (
             <article className="review" key={t.name}>
-              <div className="score">★★★★★</div>
+              <div className="score">★★★</div>
               <span className="date">{t.date}</span>
               <p className="quote">"{t.quote}"</p>
               <h4>{t.name}</h4>
@@ -164,6 +181,56 @@ export default function Home() {
             </article>
           ))}
         </div>
+        <section className="trusted-partners">
+        <div className="partners-container">
+          <h2>Trusted Platform Partners</h2>
+          <p className="partners-subtitle">
+            We work with all major e-commerce platforms to maximize your reach
+          </p>
+          
+          <div className="platforms-grid">
+            <div className="platform-card">
+              <FaAmazon className="platform-icon amazon" />
+              <span>Amazon</span>
+            </div>
+            <div className="platform-card">
+              <SiFlipkart className="platform-icon flipkart" />
+              <span>Flipkart</span>
+            </div>
+            <div className="platform-card">
+              <FaStore className="platform-icon jiomart" />
+              <span>JioMart</span>
+            </div>
+            <div className="platform-card">
+              <FaStore className="platform-icon meesho" />
+              <span>Meesho</span>
+            </div>
+          </div>
+
+          <div className="trust-indicators">
+            <div className="trust-item">
+              <MdSecurity className="trust-icon" />
+              <h3>Secure & Trusted</h3>
+              <p>100% secure data handling with enterprise-grade security</p>
+            </div>
+            <div className="trust-item">
+              <MdVerifiedUser className="trust-icon" />
+              <h3>Certified Experts</h3>
+              <p>Team of certified e-commerce specialists and strategists</p>
+            </div>
+            <div className="trust-item">
+              <MdSupport className="trust-icon" />
+              <h3>24/7 Support</h3>
+              <p>Round-the-clock support and monitoring for your business</p>
+            </div>
+            <div className="trust-item">
+              <MdGroups className="trust-icon" />
+              <h3>500+ Happy Clients</h3>
+              <p>Trusted by hundreds of successful e-commerce businesses</p>
+            </div>
+          </div>
+        </div>
+      </section>
       </section>
       {/* <Footer/> */}
     </main>

@@ -80,7 +80,10 @@
   max-width: 1200px;
   margin: 0 auto;
 }
-
+.mission,
+.vision{
+  text-align: justify;
+}
 .mission h2,
 .vision h2 {
   font-size: 2rem;
