@@ -102,7 +102,7 @@ export default function Footer() {
           </div>
           <div className="contact-item">
             <FaMapMarkerAlt className="contact-icon" />
-            <span className="loc">Melapalayam, Tirunelveli - 627005</span>
+            <span className="loc">Haven City, Karungulam, Tirunelveli – 627356</span>
           </div>
         </div>
       </div>

@@ -131,7 +131,7 @@ export default function Contact() {
                 <div className="contact-icon address-icon">📍</div>
                 <div className="contact-details">
                   <h3>Address</h3>
-                  <p>Melapalayam, Tirunelveli - 627005</p>
+                  <p>Haven City, Karungulam, Tirunelveli – 627356</p>
                 </div>
               </div>
 

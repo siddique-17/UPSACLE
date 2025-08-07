@@ -131,27 +131,38 @@ export default function Home() {
         <div className="testimonial-grid">
           {[
             {
-              name: 'Sarah Johnson',
-              company: 'TechGadgets Store',
+              name: 'Revathi M.',
+              company: 'Trend Collections - Tenkasi',
+              date: 'March 5, 2024',
+              quote: 'After UPSCALE optimized our Meesho listings, we saw a 10X increase in daily orders. Their understanding of product positioning and customer targeting is top-class.',
+            },
+            {
+              name: 'Logeshwaran R.',
+              company: 'Fresh Basket - Thoothukudi',
+              date: 'March 12, 2024',
+              quote: 'The UPSCALE team made our JioMart seller setup extremely smooth. From product uploads to catalog creation, they handled everything. Highly recommended.',
+            },
+            {
+              name: 'Sathya Narayanan',
+              company: 'Sri Tech World - Madurai',
               date: 'March 15, 2024',
-              quote: 'UPSCALE transformed our Amazon business completely. Within 3 months, our sales increased by 400% and our product rankings improved dramatically. Their team is incredibly knowledgeable and responsive.',
+              quote: 'We were struggling with Amazon sales for a long time. Within just 3 months of working with UPSCALE, our sales increased by over 400%. The product listings were perfectly optimized. Highly professional and dedicated team!',
             },
             {
-              name: 'Michael Chen',
-              company: 'HomeDecor Plus',
+              name: 'M. Muthukumar',
+              company: 'Kavi Home Needs - Tirunelveli',
               date: 'February 28, 2024',
-              quote: 'The product optimization services from UPSCALE are exceptional. They helped us improve our conversion rates by 250% across Flipkart and Amazon. The ROI has been incredible.',
+              quote: 'The Flipkart optimization strategies from UPSCALE helped boost our conversion rate by 250%. They know exactly what works. The support team is always available and helpful.',
             },
             {
-              name: 'Priya Sharma',
-              company: 'Fashion Forward',
-              date: 'March 8, 2024',
-              quote: 'Working with UPSCALE has been a game changer for our Meesho and JioMart stores. Their advertising management increased our visibility and our monthly revenue grew by 350%.',
+              name: 'Amina Fathima',
+              company: 'EthniKart - Chennai',
+              date: 'April 2, 2024',
+              quote: 'We wanted to try exporting to the UAE but had no idea where to start. UPSCALE guided us through shipping, invoicing, and compliance. Everything was taken care of professionally.',
             }
           ].map(t => (
             <article className="review" key={t.name}>
-              <div className="score">99</div>
-              <div className="stars">★★★★★</div>
+              <div className="score">★★★★★</div>
               <span className="date">{t.date}</span>
               <p className="quote">"{t.quote}"</p>
               <h4>{t.name}</h4>

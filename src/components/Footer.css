@@ -57,7 +57,7 @@
 }
 
 .footer__brand img {
-  width: 40px;
+  width: 100px;
   height: auto;
   filter: brightness(0) invert(1);
 }
