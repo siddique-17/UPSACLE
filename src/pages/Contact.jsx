@@ -2,6 +2,22 @@ import { useState } from 'react';
 import './Contact.css';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import { 
+  FaPhone, 
+  FaEnvelope, 
+  FaMapMarkerAlt, 
+  FaClock,
+  FaWhatsapp,
+  FaComments,
+  FaMobile,
+  FaCheckCircle,
+  FaExclamationCircle,
+  FaSpinner,
+  FaPaperPlane,
+  FaBolt,
+  FaLock,
+  FaLightbulb
+} from 'react-icons/fa';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -121,7 +137,9 @@ export default function Contact() {
               <h2>Contact Information</h2>
 
               <div className="contact-item">
-                <div className="contact-icon phone-icon">📞</div>
+                <div className="contact-icon phone-icon">
+                  <FaPhone />
+                </div>
                 <div className="contact-details">
                   <h3>Phone</h3>
                   <p>+91 7550194133</p>
@@ -129,7 +147,9 @@ export default function Contact() {
               </div>
 
               <div className="contact-item">
-                <div className="contact-icon email-icon">✉️</div>
+                <div className="contact-icon email-icon">
+                  <FaEnvelope />
+                </div>
                 <div className="contact-details">
                   <h3>Email</h3>
                   <p>upscalegrowyourbusiness@gmail.com</p>
@@ -137,7 +157,9 @@ export default function Contact() {
               </div>
 
               <div className="contact-item">
-                <div className="contact-icon address-icon">📍</div>
+                <div className="contact-icon address-icon">
+                  <FaMapMarkerAlt />
+                </div>
                 <div className="contact-details">
                   <h3>Address</h3>
                   <p>Haven City, Karungulam, Tirunelveli – 627356</p>
@@ -145,7 +167,9 @@ export default function Contact() {
               </div>
 
               <div className="contact-item">
-                <div className="contact-icon time-icon">🕐</div>
+                <div className="contact-icon time-icon">
+                  <FaClock />
+                </div>
                 <div className="contact-details">
                   <h3>Business Hours</h3>
                   <p>Monday - Friday: 9:00 AM - 6:00 PM IST</p>
@@ -154,12 +178,16 @@ export default function Contact() {
 
               {/* WhatsApp Quick Response */}
               <div className="whatsapp-section">
-                <div className="whatsapp-icon">💬</div>
+                <div className="whatsapp-icon">
+                  <FaComments />
+                </div>
                 <div className="whatsapp-content">
                   <h3>Quick Response on WhatsApp</h3>
                   <p>Get instant answers to your questions. Chat with our experts on WhatsApp for immediate assistance.</p>
                   <button className="whatsapp-btn" onClick={handleWhatsAppClick}>
-                    <span className="whatsapp-logo">📱</span>
+                    <span className="whatsapp-logo">
+                      <FaWhatsapp />
+                    </span>
                     Chat on WhatsApp
                   </button>
                 </div>
@@ -173,13 +201,15 @@ export default function Contact() {
               {/* Status Messages */}
               {submitStatus === 'success' && (
                 <div className="success-message">
-                  ✅ Thank you! Your message has been sent successfully. We'll get back to you within 24 hours.
+                  <FaCheckCircle className="status-icon" />
+                  Thank you! Your message has been sent successfully. We'll get back to you within 24 hours.
                 </div>
               )}
               
               {submitStatus === 'error' && (
                 <div className="error-message">
-                  ❌ Sorry, there was an error sending your message. Please try again or contact us directly.
+                  <FaExclamationCircle className="status-icon" />
+                  Sorry, there was an error sending your message. Please try again or contact us directly.
                 </div>
               )}
               
@@ -259,7 +289,15 @@ export default function Contact() {
                   className="send-message-btn"
                   disabled={isSubmitting}
                 >
-                  {isSubmitting ? 'Sending... ⏳' : 'Send Message 📤'}
+                  {isSubmitting ? (
+                    <>
+                      <FaSpinner className="spinner" /> Sending...
+                    </>
+                  ) : (
+                    <>
+                      <FaPaperPlane /> Send Message
+                    </>
+                  )}
                 </button>
               </form>
             </div>
@@ -270,19 +308,25 @@ export default function Contact() {
         <section className="additional-info">
           <div className="info-grid">
             <div className="info-card">
-              <div className="info-icon">⚡</div>
+              <div className="info-icon">
+                <FaBolt />
+              </div>
               <h3>Fast Response</h3>
               <p>We respond to all inquiries within 24 hours, often much sooner. Your time is valuable to us.</p>
             </div>
 
             <div className="info-card">
-              <div className="info-icon">🔒</div>
+              <div className="info-icon">
+                <FaLock />
+              </div>
               <h3>Confidential</h3>
               <p>All information shared with us is kept strictly confidential. Your business data is secure.</p>
             </div>
 
             <div className="info-card">
-              <div className="info-icon">💡</div>
+              <div className="info-icon">
+                <FaLightbulb />
+              </div>
               <h3>Free Consultation</h3>
               <p>Get a free initial consultation to discuss your e-commerce goals and growth opportunities.</p>
             </div>

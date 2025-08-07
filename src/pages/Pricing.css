@@ -469,3 +469,35 @@
     padding: 60px 6vw;
   }
 }
+/* Icon styling */
+.addon-icon svg {
+  width: 48px;
+  height: 48px;
+  color: var(--accent-color, #000000);
+  transition: all 0.3s ease;
+}
+
+.star-icon svg {
+  width: 20px;
+  height: 20px;
+  color: var(--accent-color, #ffd700);
+  margin-right: 8px;
+}
+
+.addon-card:hover .addon-icon svg {
+  color: var(--primary-color, #ff6600);
+  transform: scale(1.1);
+}
+
+/* Ensure icons are properly aligned */
+.addon-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.star-icon {
+  display: inline-flex;
+  align-items: center;
+}

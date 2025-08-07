@@ -1,6 +1,13 @@
 import './Pricing.css';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import { 
+  FaUserTie, 
+  FaCamera, 
+  FaPenFancy, 
+  FaStore, 
+  FaStar 
+} from 'react-icons/fa';
 
 export default function Pricing() {
   return (
@@ -16,7 +23,7 @@ export default function Pricing() {
               with no hidden fees or long-term contracts.
             </p>
             <div className="guarantee-badge">
-              <span className="star-icon">⭐</span>
+              <span className="star-icon"><FaStar /></span>
               30-day money-back guarantee
             </div>
           </div>
@@ -115,7 +122,7 @@ export default function Pricing() {
 
           <div className="addons-grid">
             <div className="addon-card">
-              <div className="addon-icon">👨‍🏫</div>
+              <div className="addon-icon"><FaUserTie /></div>
               <h3>Expert Mentoring</h3>
               <div className="addon-price">₹149<span>/hour</span></div>
               <p>One-on-one sessions with e-commerce experts</p>
@@ -123,7 +130,7 @@ export default function Pricing() {
             </div>
 
             <div className="addon-card">
-              <div className="addon-icon">📸</div>
+              <div className="addon-icon"><FaCamera /></div>
               <h3>Product Photography</h3>
               <div className="addon-price">₹499<span>/product</span></div>
               <p>Professional product photography and editing</p>
@@ -131,7 +138,7 @@ export default function Pricing() {
             </div>
 
             <div className="addon-card">
-              <div className="addon-icon">✍️</div>
+              <div className="addon-icon"><FaPenFancy /></div>
               <h3>A+ Content Creation</h3>
               <div className="addon-price">₹1200<span>/listing</span></div>
               <p>Premium Amazon A+ content design and copywriting</p>
@@ -139,9 +146,9 @@ export default function Pricing() {
             </div>
 
             <div className="addon-card">
-              <div className="addon-icon">🏪</div>
+              <div className="addon-icon"><FaStore /></div>
               <h3>Brand Store Setup</h3>
-              <div className="addon-price">₹499<span>/one-time</span></div>
+              <div className="addon-price">₹4999<span>/one-time</span></div>
               <p>Complete Amazon Brand Store design and setup</p>
               <button className="addon-button">Add to Plan</button>
             </div>

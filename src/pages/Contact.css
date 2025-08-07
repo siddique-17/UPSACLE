@@ -337,3 +337,84 @@
     justify-content: center;
   }
 }
+/* Icon styling for professional appearance */
+.contact-icon svg,
+.whatsapp-icon svg,
+.whatsapp-logo svg,
+.info-icon svg {
+  width: 24px;
+  height: 24px;
+  color: var(--accent-color, #ff6600);
+  transition: all 0.3s ease;
+}
+
+.info-icon svg {
+  width: 32px;
+  height: 32px;
+}
+
+.whatsapp-logo svg {
+  color: #ffffff; /* WhatsApp green */
+  margin-right: 8px;
+}
+
+.status-icon {
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+.success-message {
+  display: flex;
+  align-items: center;
+  color: #28a745;
+  background: #d4edda;
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+
+.error-message {
+  display: flex;
+  align-items: center;
+  color: #dc3545;
+  background: #f8d7da;
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+
+.send-message-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Hover effects */
+.contact-item:hover .contact-icon svg,
+.info-card:hover .info-icon svg {
+  color: var(--primary-color, #ff6600);
+  transform: scale(1.1);
+}
+
+.whatsapp-btn:hover .whatsapp-logo svg {
+  transform: scale(1.1);
+}
+
+/* Ensure proper alignment */
+.contact-icon,
+.whatsapp-icon,
+.info-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
