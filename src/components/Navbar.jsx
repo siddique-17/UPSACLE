@@ -99,7 +99,7 @@ export default function Navbar() {
             <div className="mobile-menu-header">
               <div className="mobile-brand">
                 <img src={logo} alt="UPSCALE" />
-                {/* <span>UPSCALE</span> */}
+                <span>UPSCALE</span>
               </div>
               {/* <button className="mobile-close-btn" onClick={closeMenu}>
                 ✕
