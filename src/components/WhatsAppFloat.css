@@ -1,0 +1,135 @@
+.whatsapp-float {
+  position: fixed;
+  bottom: 25px;
+  left: 25px;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #25d366, #128c7e);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 9999;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  animation: whatsappPulse 2s ease-in-out infinite;
+}
+
+.whatsapp-float:hover {
+  transform: translateY(-3px) scale(1.1);
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
+  animation-play-state: paused;
+}
+
+.whatsapp-icon {
+  font-size: 28px;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover .whatsapp-icon {
+  transform: scale(1.1);
+}
+
+/* Tooltip */
+.whatsapp-tooltip {
+  position: absolute;
+  left: 75px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  pointer-events: none;
+  z-index: 10000;
+}
+
+.whatsapp-tooltip::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -5px;
+  transform: translateY(-50%);
+  border: 5px solid transparent;
+  border-right-color: rgba(0, 0, 0, 0.8);
+}
+
+.whatsapp-float:hover .whatsapp-tooltip {
+  opacity: 1;
+  visibility: visible;
+  left: 80px;
+}
+
+/* Pulse Animation */
+@keyframes whatsappPulse {
+  0%, 100% {
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+  }
+  50% {
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.6), 0 0 0 10px rgba(37, 211, 102, 0.1);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .whatsapp-float {
+    width: 55px;
+    height: 55px;
+    bottom: 20px;
+    left: 20px;
+  }
+  
+  .whatsapp-icon {
+    font-size: 24px;
+  }
+  
+  .whatsapp-tooltip {
+    left: 70px;
+    font-size: 13px;
+    padding: 6px 10px;
+  }
+  
+  .whatsapp-float:hover .whatsapp-tooltip {
+    left: 75px;
+  }
+}
+
+@media (max-width: 480px) {
+  .whatsapp-float {
+    width: 50px;
+    height: 50px;
+    bottom: 15px;
+    left: 15px;
+  }
+  
+  .whatsapp-icon {
+    font-size: 22px;
+  }
+  
+  /* Hide tooltip on mobile to prevent issues */
+  .whatsapp-tooltip {
+    display: none;
+  }
+}
+
+/* Alternative: Bouncing Animation */
+@keyframes whatsappBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* You can replace the pulse animation with bounce by changing the animation property */
+.whatsapp-float.bounce {
+  animation: whatsappBounce 1s ease-in-out infinite;
+}
