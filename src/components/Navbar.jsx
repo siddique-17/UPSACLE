@@ -6,6 +6,13 @@ import logo from '../assets/logo.png';
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
+const handleWhatsAppClick = () => {
+    const phoneNumber = "7550194133"; // Your phone number without + and spaces
+    const message = "Hi UPSCALE! I'm interested in your e-commerce services and would like to discuss my business growth opportunities.";
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+    window.open(whatsappURL, '_blank');
+  };
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -81,7 +88,7 @@ export default function Navbar() {
         </Link>
       </nav>
 
-      <Link to="/contact" className="cta">Get Started</Link>
+      <button className="cta" onClick={handleWhatsAppClick}>Get Started</button>
 
       {/* Mobile Menu Button */}
       <button className="mobile-menu-btn" onClick={toggleMenu}>
@@ -114,7 +121,7 @@ export default function Navbar() {
             </div>
             
             {/* CTA Button */}
-            <Link to="/contact" className="mobile-cta" onClick={closeMenu}>Get Started</Link>
+           <button className="cta" onClick={handleWhatsAppClick}>Get Started</button>
           </nav>
         </div>
       )}

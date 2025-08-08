@@ -183,29 +183,8 @@ export default function Home() {
         </div>
         <section className="trusted-partners">
         <div className="partners-container">
-          <h2>Trusted Platform Partners</h2>
-          <p className="partners-subtitle">
-            We work with all major e-commerce platforms to maximize your reach
-          </p>
           
-          <div className="platforms-grid">
-            <div className="platform-card">
-              <FaAmazon className="platform-icon amazon" />
-              <span>Amazon</span>
-            </div>
-            <div className="platform-card">
-              <SiFlipkart className="platform-icon flipkart" />
-              <span>Flipkart</span>
-            </div>
-            <div className="platform-card">
-              <FaStore className="platform-icon jiomart" />
-              <span>JioMart</span>
-            </div>
-            <div className="platform-card">
-              <FaStore className="platform-icon meesho" />
-              <span>Meesho</span>
-            </div>
-          </div>
+         
 
           <div className="trust-indicators">
             <div className="trust-item">
