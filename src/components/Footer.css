@@ -1,42 +1,70 @@
-/* Import Poppins font to match the site */
+/* ========== IMPORTS & VARIABLES ========== */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
-/* Force remove all underlines from footer */
-.footer a,
-.footer a:link,
-.footer a:visited,
-.footer a:hover,
-.footer a:active,
-.footer a:focus {
-  text-decoration: none !important;
+:root {
+  --footer-primary: #2c3e50;
+  --footer-secondary: #34495e;
+  --text-primary: #ffffff;
+  --text-secondary: #b8c5d1;
+  --text-dark: #000000;
+  --accent-primary: #ff6600;
+  --accent-secondary: #ff8533;
+  --transition-smooth: all 0.3s ease;
+  --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.3);
+  --border-radius: 50%;
+  --max-width: 1200px;
 }
 
+/* ========== BASE STYLES ========== */
 .footer {
-  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-  color: #ffffff;
+  background: linear-gradient(135deg, var(--footer-primary) 0%, var(--footer-secondary) 100%);
+  color: var(--text-primary);
   padding: 60px 6vw 0;
   width: 100%;
   box-sizing: border-box;
 }
 
+.footer a {
+  text-decoration: none !important;
+  transition: var(--transition-smooth);
+}
+
+/* ========== LAYOUT ========== */
 .footer__content {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
   gap: 50px;
-  max-width: 1200px;
+  max-width: var(--max-width);
   margin: 0 auto;
   padding-bottom: 40px;
 }
 
+.footer__bottom {
+  border-top: 1px solid var(--footer-secondary);
+  padding: 25px 0;
+  text-align: center;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.footer__bottom p {
+  color: var(--text-secondary);
+  margin: 0 auto;
+  font-size: 0.9rem;
+  max-width: var(--max-width);
+}
+
+/* ========== TYPOGRAPHY ========== */
 .footer__section h4,
 .footer__section h5 {
-  color: #ffffff;
+  color: var(--text-primary);
   font-size: 1.1rem;
   font-weight: 600;
   margin-bottom: 20px;
   position: relative;
-  display: inline-block; /* UPDATED: Ensures the element takes only the width of its content */
-  width: auto; /* UPDATED: Allows natural width */
+  display: inline-block;
+  width: auto;
 }
 
 .footer__section h4::after {
@@ -44,14 +72,14 @@
   position: absolute;
   bottom: -5px;
   left: 0;
-  width: 100%; /* UPDATED: Changed from fixed 30px to 100% of the text width */
-  max-width: 40px; /* UPDATED: Added max-width to prevent overly long lines */
+  width: 100%;
+  max-width: 40px;
   height: 2px;
-  background: linear-gradient(90deg, #ff6600, #ff8533);
+  background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
   border-radius: 2px;
 }
 
-/* Company Info Section */
+/* ========== COMPANY SECTION ========== */
 .footer__brand {
   display: flex;
   align-items: center;
@@ -68,23 +96,16 @@
 .footer__brand span {
   font-size: 1.25rem;
   font-weight: 700;
-  color: #ffffff;
+  color: var(--text-primary);
 }
 
 .footer__description {
-  color: #b8c5d1;
+  color: var(--text-secondary);
   line-height: 1.6;
   margin: 0 0 25px;
 }
 
-/* Social Media Section */
-.footer__social h5 {
-  color: #ffffff;
-  font-size: 1rem;
-  font-weight: 600;
-  margin-bottom: 15px;
-}
-
+/* ========== SOCIAL MEDIA ========== */
 .social-links {
   display: flex;
   gap: 15px;
@@ -94,14 +115,15 @@
 .social-icon {
   width: 45px;
   height: 45px;
-  border-radius: 50%;
+  border-radius: var(--border-radius);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.3rem;
-  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: var(--transition-bounce);
   position: relative;
   overflow: hidden;
+  color: var(--text-primary);
 }
 
 .social-icon::before {
@@ -119,27 +141,24 @@
   left: 100%;
 }
 
+.social-icon:hover {
+  transform: translateY(-3px) scale(1.1);
+  box-shadow: var(--shadow-hover);
+}
+
 .social-icon.linkedin {
   background: linear-gradient(135deg, #0077b5, #005885);
-  color: #ffffff;
 }
 
 .social-icon.instagram {
   background: linear-gradient(135deg, #e4405f, #833ab4, #f77737);
-  color: #ffffff;
 }
 
 .social-icon.whatsapp {
   background: linear-gradient(135deg, #25d366, #128c7e);
-  color: #ffffff;
 }
 
-.social-icon:hover {
-  transform: translateY(-3px) scale(1.1);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-}
-
-/* Quick Links */
+/* ========== NAVIGATION LINKS ========== */
 .footer__section ul {
   list-style: none;
   padding: 0;
@@ -151,8 +170,8 @@
 }
 
 .footer__section ul li a {
-  color: #b8c5d1;
-  transition: all 0.3s ease;
+  color: var(--text-secondary);
+  transition: var(--transition-smooth);
   position: relative;
   padding-left: 15px;
 }
@@ -161,7 +180,7 @@
   content: '▶';
   position: absolute;
   left: 0;
-  color: #ff6600;
+  color: var(--accent-primary);
   font-size: 0.8rem;
   transform: scale(0);
   transition: transform 0.3s ease;
@@ -172,12 +191,11 @@
 }
 
 .footer__section ul li a:hover {
-  color: #ff6600;
+  color: var(--accent-primary);
   transform: translateX(5px);
 }
 
-/* Contact Info - Updated for React Icons */
-/* Contact Info - Color Corrected */
+/* ========== CONTACT SECTION ========== */
 .contact-item {
   display: flex;
   align-items: center;
@@ -187,10 +205,10 @@
 
 .contact-icon {
   font-size: 1.1rem;
-  background: linear-gradient(135deg, #ff6600, #ff8533);
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
   width: 30px;
   height: 30px;
-  border-radius: 50%;
+  border-radius: var(--border-radius);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -198,135 +216,23 @@
   background-color: transparent;
 }
 
-.contact-item a {
-  color: #000000 !important;
-  transition: color 0.3s ease;
-  opacity: 1 !important;
-}
-
-.loc{
-  color: #000000 !important;
-  transition: color 0.3s ease;
-}
-
-.contact-item a:hover {
-  color: #ff6600 !important;
-}
-
-.contact-item span:not(.contact-icon) {
-  color: #0a0b0b !important;
-  opacity: 1 !important;
-  transition: color 0.3s ease;
-}
-
-.contact-item span:not(.contact-icon):hover {
-  color: #ff6600 !important;
-}
-
-/* Additional fix for any inherited styles */
-.footer__section .contact-item * {
-  text-decoration: none !important;
-}
-
-/* Bottom Section - Centered Copyright */
-.footer__bottom {
-  border-top: 1px solid #34495e;
-  padding: 25px 0;
-  text-align: center;
-  margin-bottom: 10px;
-  width: 100%;
-}
-
-.footer__bottom p {
-  color: #b8c5d1;
-  margin: 0 auto;
-  font-size: 0.9rem;
-  text-align: center;
-  max-width: 1200px;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .footer__content {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-  
-  .footer {
-    padding: 40px 6vw 0;
-  }
-
-  .social-links {
-    justify-content: center;
-  }
-  
-  /* UPDATED: Center headings and adjust underline position for mobile */
-  .footer__section h4,
-  .footer__section h5 {
-    text-align: center;
-    display: block;
-    margin: 0 auto 20px;
-    position: relative;
-  }
-  
-  .footer__section h4::after {
-    left: 50%;
-    transform: translateX(-50%); /* UPDATED: Center the line under the text */
-    width: 30px; /* UPDATED: Use fixed width for centered alignment */
-    max-width: none;
-  }
-}
-
-@media (max-width: 480px) {
-  .footer__brand {
-    justify-content: center;
-    text-align: center;
-  }
-  
-  .footer__description {
-    text-align: center;
-  }
-  
-  .footer__section {
-    text-align: center;
-  }
-  
-  .contact-item {
-    justify-content: center;
-  }
-  
-  /* UPDATED: Ensure proper heading alignment on very small screens */
-  .footer__section h4,
-  .footer__section h5 {
-    font-size: 1rem; /* Slightly smaller font on very small screens */
-    margin-bottom: 18px;
-  }
-  
-  .footer__section h4::after {
-    width: 25px; /* UPDATED: Slightly smaller underline for very small screens */
-  }
-}
-
-/* UPDATED: Additional responsive breakpoint for extra small screens */
-@media (max-width: 360px) {
-  .footer__section h4,
-  .footer__section h5 {
-    font-size: 0.95rem;
-  }
-  
-  .footer__section h4::after {
-    width: 20px;
-    height: 1.5px;
-  }
-}
-
+.contact-item a,
+.contact-item span:not(.contact-icon),
 .contact-item .loc {
-  color: #000000 !important;
+  color: var(--text-dark) !important;
+  transition: var(--transition-smooth);
+  opacity: 1 !important;
 }
-/* ========== ADDITIONAL RESPONSIVE FIXES FOR CONTACT INFO ========== */
-/* Add this section at the end of your existing Footer.css file */
 
-/* Enhanced responsive breakpoints for contact info */
+.contact-item a:hover,
+.contact-item span:not(.contact-icon):hover,
+.contact-item .loc:hover {
+  color: var(--accent-primary) !important;
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+
+/* Tablet */
 @media (max-width: 1200px) {
   .contact-item a,
   .contact-item span:not(.contact-icon) {
@@ -336,9 +242,6 @@
 
 @media (max-width: 900px) {
   .contact-item {
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
     gap: 10px;
   }
   
@@ -353,6 +256,36 @@
     font-size: 0.9rem;
     flex: 1;
     word-wrap: break-word;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .footer {
+    padding: 40px 6vw 0;
+  }
+  
+  .footer__content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .social-links {
+    justify-content: center;
+  }
+  
+  .footer__section h4,
+  .footer__section h5 {
+    text-align: center;
+    display: block;
+    margin: 0 auto 20px;
+  }
+  
+  .footer__section h4::after {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    max-width: none;
   }
 }
 
@@ -380,6 +313,33 @@
   }
 }
 
+@media (max-width: 480px) {
+  .footer__brand,
+  .footer__description,
+  .footer__section {
+    text-align: center;
+  }
+  
+  .footer__brand {
+    justify-content: center;
+  }
+  
+  .contact-item {
+    justify-content: center;
+  }
+  
+  .footer__section h4,
+  .footer__section h5 {
+    font-size: 1rem;
+    margin-bottom: 18px;
+  }
+  
+  .footer__section h4::after {
+    width: 25px;
+  }
+}
+
+/* Small Mobile */
 @media (max-width: 400px) {
   .contact-item {
     gap: 6px;
@@ -398,12 +358,24 @@
     line-height: 1.3;
     max-width: 200px;
     overflow-wrap: break-word;
+    hyphens: auto;
   }
   
-  /* Handle long email addresses */
   .contact-item a[href^="mailto:"] {
     font-size: 0.75rem;
     word-break: break-all;
+  }
+}
+
+@media (max-width: 360px) {
+  .footer__section h4,
+  .footer__section h5 {
+    font-size: 0.95rem;
+  }
+  
+  .footer__section h4::after {
+    width: 20px;
+    height: 1.5px;
   }
 }
 
@@ -424,46 +396,18 @@
     font-size: 0.75rem;
     line-height: 1.2;
     max-width: 180px;
+    overflow-wrap: anywhere;
   }
   
-  /* Stack everything vertically on very small screens */
   .footer__content {
-    grid-template-columns: 1fr;
     gap: 25px;
   }
-}
-
-/* Additional fixes for text visibility */
-@media (max-width: 768px) {
-  .contact-item a,
-  .contact-item span:not(.contact-icon),
-  .contact-item .loc {
-    color: #000000 !important;
-  }
   
-  .contact-item a:hover,
-  .contact-item span:not(.contact-icon):hover,
-  .contact-item .loc:hover {
-    color: #ff6600 !important;
-  }
-}
-
-/* Ensure proper spacing in contact section */
-@media (max-width: 600px) {
   .footer__section:nth-child(3) {
     margin-top: 10px;
   }
   
   .contact-item:last-child {
     margin-bottom: 10px;
-  }
-}
-
-/* Fix for very long addresses or contact info */
-@media (max-width: 480px) {
-  .contact-item a,
-  .contact-item span:not(.contact-icon) {
-    hyphens: auto;
-    overflow-wrap: anywhere;
   }
 }
