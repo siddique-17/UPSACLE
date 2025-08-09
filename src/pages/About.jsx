@@ -16,7 +16,7 @@ import aboutHeroImg from '../assets/hero.jpeg';
 // Constants
 const STATS_DATA = [
   { value: '500+', label: 'Happy Clients' },
-  { value: '95%', label: 'Success Rate' },
+  { value: '99%', label: 'Success Rate' },
   { value: '300%', label: 'Average Growth' },
   { value: '24/7', label: 'Support Available' }
 ];
