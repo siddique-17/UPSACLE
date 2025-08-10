@@ -540,3 +540,440 @@
   align-items: center;
   justify-content: center;
 }
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+  animation: slideUp 0.4s ease;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.success-animation, .error-animation {
+  margin-bottom: 20px;
+}
+
+.success-icon {
+  font-size: 4rem;
+  color: #22c55e;
+  animation: bounce 0.6s ease;
+}
+
+.error-icon {
+  font-size: 4rem;
+  color: #ef4444;
+  animation: shake 0.6s ease;
+}
+
+.modal-success h3 {
+  color: #22c55e;
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+}
+
+.modal-error h3 {
+  color: #ef4444;
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+}
+
+.modal-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 25px;
+  flex-wrap: wrap;
+}
+
+.modal-btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+}
+
+.success-btn {
+  background: #22c55e;
+  color: white;
+}
+
+.success-btn:hover {
+  background: #16a34a;
+  transform: translateY(-2px);
+}
+
+.retry-btn {
+  background: #6b7280;
+  color: white;
+}
+
+.retry-btn:hover {
+  background: #4b5563;
+  transform: translateY(-2px);
+}
+
+.modal-btn.whatsapp-btn {
+  background: #25d366;
+  color: white;
+}
+
+.modal-btn.whatsapp-btn:hover {
+  background: #1da851;
+  transform: translateY(-2px);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { 
+    transform: translateY(30px); 
+    opacity: 0; 
+  }
+  to { 
+    transform: translateY(0); 
+    opacity: 1; 
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 53%, 80%, 100% { 
+    transform: translate3d(0,0,0); 
+  }
+  40%, 43% { 
+    transform: translate3d(0, -20px, 0); 
+  }
+  70% { 
+    transform: translate3d(0, -10px, 0); 
+  }
+  90% { 
+    transform: translate3d(0, -4px, 0); 
+  }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+  20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+/* Responsive Modal */
+@media (max-width: 768px) {
+  .modal-content {
+    padding: 30px 20px;
+    margin: 20px;
+    width: calc(100% - 40px);
+  }
+  
+  .modal-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .modal-btn {
+    width: 100%;
+    max-width: 250px;
+    justify-content: center;
+  }
+  
+  .success-icon,
+  .error-icon {
+    font-size: 3rem;
+  }
+}
+
+/* Spinner animation for loading state */
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+/* ========== ENHANCED CONTACT ITEM ICON HOVER - LIKE PREVIOUS PAGES ========== */
+/* Add this section to your existing Contact.css */
+
+/* Enhanced contact item icons - exactly like trust icons */
+.contact-item .contact-icon {
+  font-size: 1.5rem;
+  color: #ff6600;
+  background: linear-gradient(135deg, #ffe7d3, #ffd4b3);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+  animation: contactIconRotate 3s ease-in-out infinite;
+  margin-top: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover effect - same as trust icons from Home page */
+.contact-item:hover .contact-icon {
+  background: linear-gradient(135deg, #ff6600, #ff8533);
+  color: white !important;
+  transform: scale(1.1);
+  box-shadow: 0 10px 25px rgba(255, 102, 0, 0.3);
+  animation: none;
+}
+
+/* Shimmer effect on hover - like previous pages */
+.contact-item .contact-icon::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: left 0.6s ease;
+}
+
+.contact-item:hover .contact-icon::before {
+  left: 100%;
+}
+
+/* Continuous rotation animation - like trust icons */
+@keyframes contactIconRotate {
+  0%, 100% {
+    transform: rotate(0deg) scale(1);
+  }
+  25% {
+    transform: rotate(-5deg) scale(1.05);
+  }
+  75% {
+    transform: rotate(5deg) scale(1.05);
+  }
+}
+
+/* Enhanced contact card hover */
+.contact-item {
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.contact-item:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 15px 30px rgba(255, 102, 0, 0.1);
+}
+
+/* SVG icon styling to inherit colors properly */
+.contact-item .contact-icon svg {
+  width: 20px !important;
+  height: 20px !important;
+  color: inherit !important;
+  transition: color 0.3s ease !important;
+  transform: none !important;
+}
+
+/* Ensure white color on hover */
+.contact-item:hover .contact-icon svg {
+  color: white !important;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  .contact-item .contact-icon {
+    width: 45px;
+    height: 45px;
+    font-size: 1.3rem;
+  }
+  
+  .contact-item .contact-icon svg {
+    width: 18px !important;
+    height: 18px !important;
+  }
+  
+  .contact-item:hover {
+    transform: translateY(-3px) scale(1.02);
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-item .contact-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+  
+  .contact-item .contact-icon svg {
+    width: 16px !important;
+    height: 16px !important;
+  }
+}
+
+/* Override any existing conflicting styles */
+.contact-icon {
+  background: linear-gradient(135deg, #ffe7d3, #ffd4b3) ;
+  border-radius: 50% !important;
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .contact-item .contact-icon {
+    animation: none !important;
+  }
+}
+/* ========== ADDITIONAL INFO ICONS - SAME AS CONTACT ICONS ========== */
+/* Add this section to your existing Contact.css */
+
+/* Style info card icons exactly like contact icons */
+.info-card .info-icon {
+  font-size: 2.5rem;
+  color: #ff6600;
+  background: linear-gradient(135deg, #ffe7d3, #ffd4b3);
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  transition: all 0.3s ease;
+  animation: infoIconRotate 3s ease-in-out infinite;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover effect - same as contact icons */
+.info-card:hover .info-icon {
+  background: linear-gradient(135deg, #ff6600, #ff8533);
+  color: white !important;
+  transform: scale(1.1);
+  box-shadow: 0 10px 25px rgba(255, 102, 0, 0.3);
+  animation: none;
+}
+
+/* Shimmer effect on hover */
+.info-card .info-icon::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: left 0.6s ease;
+}
+
+.info-card:hover .info-icon::before {
+  left: 100%;
+}
+
+/* Gentle rotation animation */
+@keyframes infoIconRotate {
+  0%, 100% {
+    transform: rotate(0deg) scale(1);
+  }
+  25% {
+    transform: rotate(-3deg) scale(1.02);
+  }
+  75% {
+    transform: rotate(3deg) scale(1.02);
+  }
+}
+
+/* Enhanced info card hover */
+.info-card {
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.info-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 15px 30px rgba(255, 102, 0, 0.1);
+}
+
+/* Ensure proper SVG styling */
+.info-card .info-icon svg {
+  width: 32px !important;
+  height: 32px !important;
+  color: inherit !important;
+  transition: color 0.3s ease !important;
+  transform: none !important;
+}
+
+/* Ensure white color on hover */
+.info-card:hover .info-icon svg {
+  color: white !important;
+}
+
+/* Ensure cards are visible */
+.info-card {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  .info-card .info-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 2rem;
+  }
+  
+  .info-card .info-icon svg {
+    width: 28px !important;
+    height: 28px !important;
+  }
+  
+  .info-card:hover {
+    transform: translateY(-3px) scale(1.02);
+  }
+}
+
+@media (max-width: 480px) {
+  .info-card .info-icon {
+    width: 55px;
+    height: 55px;
+    font-size: 1.8rem;
+  }
+  
+  .info-card .info-icon svg {
+    width: 26px !important;
+    height: 26px !important;
+  }
+}
+
+/* Override any conflicting styles */
+.info-icon {
+  background: linear-gradient(135deg, #ffe7d3, #ffd4b3) ;
+  border-radius: 50% !important;
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .info-card .info-icon {
+    animation: none !important;
+  }
+}

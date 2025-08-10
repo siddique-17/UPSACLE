@@ -30,6 +30,7 @@ export default function Contact() {
   
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState('');
+  const [showModal, setShowModal] = useState(false);
 
   // Handle input changes
   const handleChange = (e) => {
@@ -71,9 +72,6 @@ export default function Contact() {
       
       // Optional: Add custom subject
       formDataObj.append("subject", `New Contact Form Submission from ${formData.fullName}`);
-      
-      // Optional: Add redirect URL (where user goes after successful submission)
-      // formDataObj.append("redirect", "https://yourwebsite.com/thank-you");
 
       // Convert FormData to JSON
       const object = Object.fromEntries(formDataObj);
@@ -93,6 +91,7 @@ export default function Contact() {
 
       if (result.success) {
         setSubmitStatus('success');
+        setShowModal(true); // Show modal instead of top message
         console.log("Success", result);
         
         // Reset form
@@ -109,6 +108,7 @@ export default function Contact() {
     } catch (error) {
       console.error('Error sending message:', error);
       setSubmitStatus('error');
+      setShowModal(true); // Show modal for error too
     } finally {
       setIsSubmitting(false);
     }
@@ -197,21 +197,6 @@ export default function Contact() {
             {/* Contact Form */}
             <div className="contact-form">
               <h2>Send us a Message</h2>
-              
-              {/* Status Messages */}
-              {submitStatus === 'success' && (
-                <div className="success-message">
-                  <FaCheckCircle className="status-icon" />
-                  Thank you! Your message has been sent successfully. We'll get back to you within 24 hours.
-                </div>
-              )}
-              
-              {submitStatus === 'error' && (
-                <div className="error-message">
-                  <FaExclamationCircle className="status-icon" />
-                  Sorry, there was an error sending your message. Please try again or contact us directly.
-                </div>
-              )}
               
               <form className="form" onSubmit={handleSubmit}>
                 <div className="form-row">
@@ -332,6 +317,53 @@ export default function Contact() {
             </div>
           </div>
         </section>
+
+        {/* ========== MODAL FOR SUCCESS/ERROR MESSAGES ========== */}
+        {showModal && (
+          <div className="modal-overlay" onClick={() => setShowModal(false)}>
+            <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+              {submitStatus === 'success' ? (
+                <div className="modal-success">
+                  <div className="success-animation">
+                    <FaCheckCircle className="success-icon" />
+                  </div>
+                  <h3>Message Sent Successfully!</h3>
+                  <p>Thank you for contacting us. We'll get back to you within 24 hours.</p>
+                  <div className="modal-buttons">
+                    <button className="modal-btn success-btn" onClick={() => setShowModal(false)}>
+                      <FaCheckCircle /> Got it!
+                    </button>
+                    <button className="modal-btn whatsapp-btn" onClick={() => {
+                      setShowModal(false);
+                      handleWhatsAppClick();
+                    }}>
+                      <FaWhatsapp /> Chat on WhatsApp
+                    </button>
+                  </div>
+                </div>
+              ) : (
+                <div className="modal-error">
+                  <div className="error-animation">
+                    <FaExclamationCircle className="error-icon" />
+                  </div>
+                  <h3>Oops! Something went wrong</h3>
+                  <p>Sorry, there was an error sending your message. Please try again or contact us directly.</p>
+                  <div className="modal-buttons">
+                    <button className="modal-btn retry-btn" onClick={() => setShowModal(false)}>
+                      Try Again
+                    </button>
+                    <button className="modal-btn whatsapp-btn" onClick={() => {
+                      setShowModal(false);
+                      handleWhatsAppClick();
+                    }}>
+                      <FaWhatsapp /> Contact via WhatsApp
+                    </button>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        )}
       </main>
       {/* <Footer /> */}
     </>

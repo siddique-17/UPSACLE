@@ -441,3 +441,83 @@
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+
+/* ========== WHY CHOOSE SECTION ICON ANIMATIONS ONLY ========== */
+/* Add this section to your About.css */
+
+/* Enhanced reason card icons - same as trust icons */
+.reason-card .reason-icon {
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #ffe7d3, #ffd4b3);
+  border-radius: 50%; /* Make it circular like trust icons */
+}
+
+/* Hover effect - same as trust icons */
+.reason-card:hover .reason-icon {
+  transform: scale(1.2) rotate(-5deg);
+  background: linear-gradient(135deg, #ff6600, #ff8533);
+  color: white;
+  box-shadow: 0 10px 25px rgba(255, 102, 0, 0.3);
+}
+
+/* Add shimmer effect like trust icons */
+.reason-card .reason-icon::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: left 0.6s ease;
+}
+
+.reason-card:hover .reason-icon::before {
+  left: 100%;
+}
+
+/* Optional: Add gentle rotation animation like trust icons */
+.reason-card .reason-icon {
+  animation: reasonIconRotate 3s ease-in-out infinite;
+}
+
+@keyframes reasonIconRotate {
+  0%, 100% {
+    transform: rotate(0deg) scale(1);
+  }
+  25% {
+    transform: rotate(-2deg) scale(1.02);
+  }
+  75% {
+    transform: rotate(2deg) scale(1.02);
+  }
+}
+
+/* Stop rotation on hover to focus on hover effect */
+.reason-card:hover .reason-icon {
+  animation: none;
+  transform: scale(1.2) rotate(-5deg);
+}
+
+/* Alternative: If you want the exact same effect as trust icons */
+.reason-card .reason-icon {
+  font-size: 2.2rem;
+  background: linear-gradient(135deg, #ffe7d3, #ffd4b3);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.reason-card:hover .reason-icon {
+  background: linear-gradient(135deg, #ff6600, #ff8533);
+  color: white;
+  transform: scale(1.1);
+  box-shadow: 0 10px 25px rgba(255, 102, 0, 0.3);
+}

@@ -1,4 +1,4 @@
-import { memo } from 'react';
+import { memo, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './About.css';
 import { 
@@ -231,8 +231,40 @@ const AboutCTA = memo(() => (
   </section>
 ));
 
-// Main Component
+// Main Component with Scroll Animations
 export default function About() {
+  useEffect(() => {
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+        }
+      });
+    }, observerOptions);
+
+    // Observe all sections that should animate on scroll
+    const sections = document.querySelectorAll('.mission-vision, .leadership, .why-choose, .about-cta');
+    sections.forEach(section => {
+      section.classList.add('animate-on-scroll');
+      observer.observe(section);
+    });
+
+    // Observe individual cards for staggered animation
+    const cards = document.querySelectorAll('.team-member, .reason-card');
+    cards.forEach((card, index) => {
+      card.classList.add('animate-on-scroll');
+      card.style.animationDelay = `${index * 0.1}s`;
+      observer.observe(card);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <main className="about">
       <AboutHero />
